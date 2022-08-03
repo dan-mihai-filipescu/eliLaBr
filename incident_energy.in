@@ -1,0 +1,31 @@
+1
+-1.
+0 1
+0.
+0.
+10.
+1.
+0
+0
+0
+-103.
+1.
+
+
+
+0   //boolean, 0 = sursa simpla, 1 = sursa ELI
+0.  //angle in deg of linear polarization plane (a negative value means circular polarization)
+0 1 in >> Pol_Model >> PfromStokes;
+    Pol_Model Model of polarisation further passed to photon (0 - Polarization vector; 1 - Stokes vector). Depends on what physics package require.
+    PfromStokes - relevant only if Pol_Model==0. Extract polarization vector (and polarization angle) from Stokes coefficients
+    		- 0 Transfer directly the polarization vector as property of generated gamma photon 
+		- 1 Extract polarization vector from Stokes parameters.
+0.  //probabilitatea de emisie gamma   (din tinta)
+1.  //probabilitate de emisie neutron  (din tinta)
+4.5 //energie gamma [MeV]
+1.  // energie neutron / temperatura spectru neutroni [MeV]
+2   //int,     emisie de gamma    izotropa sau dupa o distributie data, 0 = izotrop, 1 = dupa distributie E1, 2 = dupa distributie M1
+0   //int,     emisie de neutroni izotropa sau dupa o distributie data, 0 = izotrop, 1 = dupa distributie data (P wave)
+0   // boolean, emisie de neutroni dupa spectru WE sau monocromatic 0 = monocromatic, 1 = WE
+-103. Emission point displacement along Z (beam axis) in mm. relative to the target position
+1.  Radius of emission disc in mm. around Z axis (electron beam axis)

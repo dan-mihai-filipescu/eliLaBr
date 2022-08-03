@@ -1,0 +1,87 @@
+14.
+200.
+982.4279
+0.04
+2
+-1.048
+-1.02
+-5064.
+0.05
+0.
+0.
+0.
+0.
+-0.01
+0.01
+-0.3
+30.e-06
+-0.18
+5.e-06
+0.
+0.
+45.
+1.0
+0.0
+0 0 0 0 1
+1
+1
+-1
+1
+
+
+    in >> laser_power;      laser_power = laser_power * watt;
+    in >> elec_intensity;   elec_intensity = elec_intensity * 1.e-3;
+    in >> eene;             eene = eene * MeV;
+    in >> deene;
+    eelec = eene + CLHEP::electron_mass_c2;
+    Gamma = eelec / CLHEP::electron_mass_c2;
+    Beta = sqrt(1. - 1./(Gamma*Gamma));
+    ele_speed = Beta * CLHEP::c_light;
+    G4cout<<"Electron speed: "<<ele_speed*s/m<<G4endl;
+
+    in >> LaserType;  // LaserType(G4int) can be 1(CO2), 2(INAZUMA), 3(TALON)
+    in >> LaserDiameter;    // Laser diameter at beam waist (from specifications)
+                            // According to ISO D=4sigma definition !!!
+                            // IF NEGATIVE ==> LaserDiameter = defaultLaserDiameter
+    in >> SquareQF          // Laser beam quality factor, adimensional
+                            // IF NEGATIVE ==> SquareQF = defaultSquareQF
+    in >> Focus             // Laser focusing lens in mm
+                            // IF NEGATIVE ==> Focus = defaultFocus
+    in >> deph;
+    in >> dispX;            dispX = dispX * mm; laser
+    in >> dispY;            dispY = dispY * mm; laser
+    in >> xi;               xi = xi * mm;   electroni
+    in >> yi;               yi = yi * mm;   electroni
+    in >> zmin;             zmin = zmin * m;
+    in >> zmax;             zmax = zmax * m;
+    in >> sigx0;            sigx0 = sigx0 * mm;
+    in >> emmitx;           emmitx = emmitx * mm / (Beta*Gamma);
+    betax0 = sigx0 * sigx0 / emmitx;
+    in >> sigy0;            sigy0 = sigy0 * mm;
+    in >> emmity;           emmity = emmity * mm / (Beta*Gamma);
+    betay0 = sigy0 * sigy0 / emmity;
+    in >> laser_theta0;     laser_theta0 = laser_theta0 * deg;
+    in >> laser_phi0_ini;    //laser_phi0 = laser_phi0 * deg;
+    in >> taui;              taui = taui * deg;
+    in >> Plin;
+    in >> Pcirc;
+    in >> PLIN_MODEL_SW >> VECTOR_MODEL_SW >> STOKES_ELE_MODEL_SW >> STOKES_LAB_MODEL_SW >> STOKES_GRAPH_MODEL_SW;
+    		PLIN_MODEL_SW		- 0 Pol vector is not randomized in case Plin<1
+					  1 Pol vector is randomized in case Plin<1
+					  2 Pol vector is randomized elliptically in case Plin<1
+		VECTOR_MODEL_SW		- 0 Dan Xu model;
+					- 1 Depaola model;
+		STOKES_ELE_MODEL_SW	- 0 Stokes in electron system frame from Landau transformation
+					  1 Stokes in electron system frame from polarization vector
+		STOKES_LAB_MODEL_SW	- 0 Stokes in Lab. system frame from roration of Stokes matrix
+					  1 Stokes in Lab. system frame from polarization vector
+		STOKES_GRAPH_MODEL_SW	- 0 Increment 2D Stokes matrix for Graphing in GEANT ref.system
+					  1 Increment 2D Stokes matrix for Graphing in Lab. ref. system
+    in >> IDEAL_ELE_SW;
+    in >> IDEAL_LASER_SW;
+    in >> SOURCE_TYPE;  -1 Just photons
+                         0 Just electrons
+			+1 photons & electrons
+    in >> Z_NORM_TYPE  0 Accept any uniform random Z and multiply the matrices with Electron-Laser overlap integral
+                       1 Accept/Reject Z values proportional with Electron-Laser overlap integral and then reject according to laser intensity. LCSWeight=1.
+		       2 Accept/Reject Z values proportional with Electron-Laser overlap integral and then reject according to electron-laser overlap. LCSweight=1.

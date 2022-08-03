@@ -1,0 +1,56 @@
+#===> Show available Physics List
+/eli/phys/ListPhysics
+
+#===> Set Electromagnetic Interaction
+#/eli/phys/SelectPhysics emstandard_opt0
+#/eli/phys/SelectPhysics emstandard_opt1
+#/eli/phys/SelectPhysics emstandard_opt2
+#/eli/phys/SelectPhysics emstandard_opt3
+#/eli/phys/SelectPhysics EmPenelope
+#/eli/phys/SelectPhysics EmPenelope_usr
+#/eli/phys/SelectPhysics EmLivermore
+/eli/phys/SelectPhysics EmLivermore_usr
+#/eli/phys/SelectPhysics EmLivermore&SynchRad_usr
+#/eli/phys/SelectPhysics EmLivermorePolarized
+#/eli/phys/SelectPhysics EmLivermorePolarized_usr
+
+#===> Set Hadronic Interaction Only
+#/eli/phys/SelectPhysics FTFP_BERT
+#/eli/phys/SelectPhysics FTF_BIC
+#/eli/phys/SelectPhysics LHEP
+#/eli/phys/SelectPhysics QGS_BIC
+#/eli/phys/SelectPhysics QGSP
+#/eli/phys/SelectPhysics QGSP_FTFP_BERT
+#/eli/phys/SelectPhysics QGSC_BERT
+#/eli/phys/SelectPhysics QGSP_BERT
+#/eli/phys/SelectPhysics QGSP_BERT_HP
+#/eli/phys/SelectPhysics QGSP_BIC
+#/eli/phys/SelectPhysics QGSP_BIC_HP
+
+#/eli/phys/SelectPhysics Hadron_usr
+#===> Extra Em Nuclear Physics to be added only to "Hadron_usr"
+#/eli/phys/SelectPhysics ExtraEmPhys
+#/eli/phys/SelectPhysics ExtraEmPhys_usr
+#===> Set User Physics for Radioactive Decay
+#/eli/phys/SelectPhysics RadDecay_usr
+
+#===> Set Electromagnetic and Hadronic Interaction
+#/eli/phys/SelectPhysics FTFP_BERT_EMV
+#/eli/phys/SelectPhysics FTFP_BERT_EMX
+#/eli/phys/SelectPhysics LHEP_EMV
+#/eli/phys/SelectPhysics QBBC
+#/eli/phys/SelectPhysics QGSP_BERT_EMV
+#/eli/phys/SelectPhysics QGSP_BERT_EMX
+#/eli/phys/SelectPhysics QGSP_BIC_EMY
+
+#===> Set Cuts
+/cuts/setLowEdge 100 eV
+/eli/phys/setGammaCut 0.1 mm
+/eli/phys/setElectronCut 0.1 mm
+/eli/phys/setPositronCut 0.1 mm
+/eli/phys/setProtonCut 0.01 mm
+/eli/phys/setNeutronCut 0.00001 mm
+#/eli/phys/setCuts 1.0 mm
+/eli/phys/TargetCuts 0.001 mm
+#/eli/phys/DetectorCuts 1.0 mm
+

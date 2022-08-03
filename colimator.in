@@ -1,0 +1,28 @@
+2
+10.
+6
+180
+0.  180.
+1.
+3. 4. 6.
+0.05
+0.6  3. 0.001
+2.
+0.5
+0.1
+
+
+
+2       cate seturi de fante
+5.      ce distanta intre seturile de fante 
+6       cate fante ai intr-un set
+180     pe ce unghi total se rotesc fantele dintr-un set
+0. 90.  care sunt unghiurile initiale de la care porneste prima fanta din set
+1.      distanta dintre fante
+3. 4. 6.  grosimea, latimea si lungimea piesei de plumb folosita pentru fanta
+0.5     apertura fantei
+0.6  3.  15.  cat e mancat din piesa de plumb in grosime, de-a latul ei, si unghiul
+2.      apertura maxima a fantei
+0.5     grosimea cutiei in care stau piesele de plumb care fac fanta
+0.5     distanta minima dintre doua suprafete diferite
+

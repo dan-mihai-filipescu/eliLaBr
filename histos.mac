@@ -1,0 +1,53 @@
+
+#======================================  1D HISTOGRAMS  ======================================
+/analysis/setFileName eliGammaSource
+/analysis/h1/set 1  2000  0. 30 MeV	#Energy deposited into the target
+/analysis/h1/set 2  2000  0. 30 MeV     #Normalised Energy deposited into the target
+/analysis/h1/set 3  2000  0. 30 MeV     #Incident energy on target
+/analysis/h1/set 4  2000  0. 30 MeV     #Normalized incident energy on target
+
+#/analysis/h1/setAscii  1 true                   # Print 1D histogram of #id on ascii file.
+#/analysis/h1/setTitle  1 Test                   # Set title for the 1D histogram of #id
+#/analysis/h1/setXaxis  1 TestX                  # Set x-axis title for the 1D histogram of #id
+#/analysis/h1/setYaxis  1 TestY                  # Set y-axis title for the 1D histogram of #id
+#/analysis/h1/setActivation  1 true              # Set activation for the 1D histogram of #id
+#/analysis/h1/setActivationToAll  true           # Set activation to all 1D histograms.
+
+/analysis/h1/set 5  3600  -180. 180. deg   #Polarization angle distribution
+/analysis/h1/set 6  3600  -180. 180. deg   #Normalized polarization angle distribution
+/analysis/h1/set 9  3600     0. 360. deg   #Incident polarization angle distribution
+
+
+#======================================  2D HISTOGRAMS  ======================================
+/analysis/h2/set 1  300  -10.   10.   mm   none  300  -10.  10.    mm     none  #Gamma beam profile
+/analysis/h2/set 2  300   0.    10.0  mm   none  300   0.0  30.0   MeV    none  #Incident Energy over radius distribution on target
+/analysis/h2/set 3  300  -10.   10.   mm   none  300   0.0  30.0   MeV    none  #Incident Energy over X distribution on target
+/analysis/h2/set 4  300  -10.   10.   mm   none  300   0.0  30.0   MeV    none  #Incident Energy over Y distribution on target
+
+#/analysis/h2/set 5  300  -5.e+1 5.e+1 mm   none  300  -3.e+0 3.e+0 mm     none  #Electron space distribution
+#/analysis/h2/set 6  300  -4.e+0 4.e+0 mm   none  300  -1.e+0 1.e+0 mm     none  #Interaction point XY distribution
+#/analysis/h2/set 7  300  -3.e+0 3.e+0 mm   none  300  -4.e-3 4.e-3 radian none  #Interaction HORIZONTAL spacephase distribution
+#/analysis/h2/set 8  300  -1.e+0 1.e+0 mm   none  300  -2.e-4 2.e-4 radian none  #Interaction VERTICAL spacephase distribution
+#/analysis/h2/set 9  300  -2.e-2 2.e-2 none none  300  -1.e-3 1.e-3 none   none  #Laser Transversal Impulse distribution
+
+#/analysis/h2/set 10 1000  0.0   30.   MeV  none  1000 -1.01  1.01  none   none  #Stokes 1 distribution
+#/analysis/h2/set 11 1000  0.0   30.   MeV  none  1000 -1.01  1.01  none   none  #Stokes 2 distribution
+#/analysis/h2/set 12 1000  0.0   30.   MeV  none  1000 -1.01  1.01  none   none  #Plin distribution Sqrt(S1^2+S2^2)
+#/analysis/h2/set 13 1000  0.0   30.   MeV  none  1000 -1.01  1.01  none   none  #Stokes 3 distribution
+#/analysis/h2/set 14 1000  0.0   30.   MeV  none   300 -180.  180.  deg    none  #Polarization angle distribution
+
+#/analysis/h2/set 15 300   0.0   180.  deg  none   300  0.    360.  deg    none  #Angular emission distribution
+
+/analysis/h2/set 16 2000  0.0   30.   MeV  none  5000  60.   100.  ns     none  #Target E-T
+
+/analysis/h2/set 17 300  -10.   10.   mm   none  300  -10.   10.   mm     none  #Gamma beam Energy Dep. profile
+/analysis/h2/set 18 300  -10.   10.   mm   none  300  -10.   10.   mm     none  #Gamma beam Energy Dep. Norm. profile
+
+#/analysis/h2/set 19 300    0.  180.  deg   none  300    0.  360.  deg     none  #Perp. CS / Parallel CS  polariz. scatt.
+
+#/analysis/h2/set 20 300  -20.    20.  mm   none  300   -20.  20.   mm     none  #Stokes Surf 1 distribution
+#/analysis/h2/set 21 300  -20.    20.  mm   none  300   -20.  20.   mm     none  #Stokes Surf 2 distribution
+#/analysis/h2/set 22 300  -20.    20.  mm   none  300   -20.  20.   mm     none  #Stokes Surf 3 distribution
+
+#/analysis/h2/set 23 300    0.  180.  deg   none  300    0.  360.  deg     none  #Gamma beam angle profile
+#/analysis/h2/set 24 300    0.  180.  deg   none  300    0.  360.  deg     none  #Polarization Degree

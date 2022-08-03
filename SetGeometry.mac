@@ -1,0 +1,80 @@
+#=== Fill E8 Experimental area with AIR or VACUUM ===
+/eli/det/setE8_Filling Air
+
+/eli/det/setTGThickness 4. inch
+#/eli/det/setTGThickness 0.5 mm
+
+#=== TARGET INSIDE 4Pi detector ===
+#/eli/det/setTGDiameter 20. mm
+#/eli/det/setTGPlacement detector
+#/eli/det/setTGPosition 0. mm
+
+#=== TARGET INSIDE E8 Hall ===
+#/eli/det/setTGDiameter 3.5 inch
+#/eli/det/setTGPlacement E8
+#/eli/det/setTGPosition 25.92 m
+
+#=== MONITOR FOR GAMMA SOURCE ===
+/eli/det/setTGDiameter 3.5 inch
+/eli/det/setTGPlacement world
+/eli/det/setTGPosition 26. m
+
+#=== TARGET HOUSING ? ===
+/eli/det/setTGHousing true
+#/eli/det/setTGHousing false
+
+#/eli/det/setTGMaterial Air
+#/eli/det/setTGMaterial Vacuum
+#/eli/det/setTGMaterial Titanium
+#/eli/det/setTGMaterial Cadmium
+#/eli/det/setTGMaterial Aluminum
+#/eli/det/setTGMaterial Iron
+#/eli/det/setTGMaterial Nickel
+#/eli/det/setTGMaterial Copper
+#/eli/det/setTGMaterial Wolfram
+#/eli/det/setTGMaterial Gold
+#/eli/det/setTGMaterial Lead
+#/eli/det/setTGMaterial Thulium
+#/eli/det/setTGMaterial Uranium
+/eli/det/setTGMaterial LaBr3
+#/eli/det/setTGMaterial CeBr3
+#/eli/det/setTGMaterial Silicon
+
+# Beam Attenuator
+/eli/det/setATThickness 2. cm
+/eli/det/setATHole 0. mm
+/eli/det/setATPosition -20.2 cm
+/eli/det/setATMaterial Lead
+/eli/det/setATPlacement false
+
+#=== Vacuum Window & Laser Mirror placements ===
+/eli/det/PlaceWindow true
+/eli/det/PlaceMirror true
+
+#=== BAD Vacuum Pressure ===
+/eli/det/setBADVacuumPressure 1.e-8 atmosphere
+
+#======== 3He GAS ========
+/eli/det/setSDPercentage 100.
+/eli/det/setSDMaterial He3_gas
+/eli/det/setSDPressure 9.6427 atmosphere
+#/eli/det/setSDPressure 10. atmosphere
+
+#======== BF3 GAS ========
+#/eli/det/setSDPercentage 96.
+#/eli/det/setSDMaterial BF3_gas
+#/eli/det/setSDPressure 1.0 atmosphere
+
+#=== 4Pi Neutron detector Geometry ===
+/eli/det/setModeratorSize 56. cm
+/eli/det/setNumberOfRings 3
+
+/eli/geometry/SetRadius1 5.6 cm
+/eli/geometry/SetRadius2 14.0 cm
+/eli/geometry/SetRadius3 17. cm
+/eli/geometry/SetNumber1 4
+/eli/geometry/SetNumber2 12
+/eli/geometry/SetNumber3 20
+#/eli/geometry/SetPhase1 0. deg
+#/eli/geometry/SetPhase2 20. deg
+/eli/geometry/SetPhase3 15. deg

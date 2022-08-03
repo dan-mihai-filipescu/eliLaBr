@@ -1,0 +1,11 @@
+/control/execute SetGeometry.mac
+/control/execute SetPhysics.mac
+/control/execute histos.mac
+#/control/execute histos_monitor.mac
+/run/initialize
+#/physics_engine/neutron/energyLimit 0. GeV
+#/physics_engine/neutron/timeLimit 1500000. ns
+#/control/execute gui.mac
+#/control/execute vrml.mac
+#/control/execute vis1.mac
+/run/beamOn 100

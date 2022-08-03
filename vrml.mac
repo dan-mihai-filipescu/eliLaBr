@@ -1,0 +1,101 @@
+
+# Set verbose level
+/run/verbose 1
+
+#################################################
+# Visualization of detector geometry with 
+# the VRML2FILE driver.
+#################################################
+
+# Invoke the VRML2FILE driver
+#/vis/open VRML2FILE
+
+# Visualize of the whole detector geometry
+#/vis/viewer/set/style surface
+#/vis/drawVolume
+#/vis/viewer/update
+
+#################################################
+# Visualization of detector geometry and events 
+# with the VRML2FILE driver.
+#################################################
+
+# Invoke the VRML2FILE driver
+/vis/open VRML2FILE
+
+# Set viewer rendering style
+# "wireframe" means  "half-transparent" in VRML2FILE driver 
+#/vis/viewer/set/style surface
+/vis/viewer/set/style wireframe
+
+# Compund command: creates scene, adds volume, attaches scene handler
+# and refreshes viewer
+/vis/drawVolume
+
+# Create a new scene 
+/vis/scene/create
+
+# Attach the current scene handler to the current scene
+/vis/sceneHandler/attach 
+
+# Add the world volume to the current scene
+/vis/scene/add/volume
+
+# Visualize one event added to the current scene
+# * Command "/vis/scene/notifyHandlers" is written in 
+#   XrayTelRunAction::BeginOfRunAction()
+# * Command "/vis/viewer/update" is written in 
+#   XrayTelRunAction::EndOfRunAction()
+
+# Store particle trajactories for visualization
+/tracking/storeTrajectory 1
+
+
+
+# for drawing the tracks
+# (if too many tracks cause core dump => storeTrajectory 0)
+/tracking/storeTrajectory 1
+/vis/scene/add/trajectories
+# (if you prefer refreshing each event, comment out next line)
+    /vis/scene/endOfEventAction accumulate
+#
+
+
+#/run/beamOn 10
+
+
+
+
+
+# Set to draw tracks of positively charged particles
+#/event/drawTracks charged
+
+# Set General Particle Source options
+#/gps/particle proton
+#/gps/pos/type Plane
+#/gps/pos/shape Annulus
+#/gps/pos/rot1 0. 0. 1.
+#/gps/pos/rot2 0. 1. 0.
+#/gps/pos/radius 35.5 cm
+#/gps/pos/inner_radius 30.5 cm
+#/gps/pos/centre 780.1 0. 0. cm
+#/gps/ang/type cos
+#/gps/ang/rot1 0. 0. 1.
+#/gps/ang/rot2 0. 1. 0.
+#/gps/ang/maxtheta 1. deg
+#/gps/ene/type Mono
+#/gps/ene/mono 0.5 MeV
+
+# Set number of particles and start
+#/run/beamOn 10000
+
+
+
+
+
+
+
+
+
+
+
