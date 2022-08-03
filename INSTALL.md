@@ -30,3 +30,6 @@ This is relying on `GNUmakefile` script and will make also `libTvectors.so` and
 - `make clean` will clean the last build of `eliLaBr` code
 - `make allclean` will clean the last build of `eliLaBr` code but also the 
 **`Tvectors`** and the **`PileItUp`** builds.
+
+The **eliLaBr** code can also be build locally using **CMake** based on `CMakeLists.txt` file.
+Go to `build` folder and read the instructions from `Readme.txt` file to build the executable and all needed libraries there.
