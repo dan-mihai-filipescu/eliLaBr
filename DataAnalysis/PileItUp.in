@@ -1,0 +1,51 @@
+-1.
+1
+4 12 20
+1
+1
+1
+0
+8000
+1000.
+1000.
+5.
+0
+1
+
+
+PileUpInp - if negative, will consider ABS (ROUND (PileUpInp))
+          - if positive, will be considered as average of Poisson distribution
+
+runnum - GASP run number
+
+NdetA NdetB NdetC - number of counters on inner, middle and outer rings
+
+PartType = 1;  // 1 - neutron
+               // 2 - gamma
+               // 3 - e-
+               // 4 - proton
+               // 5 - e+
+               // 6 - deuteron
+               // 7 - alpha
+               // 8 - C12[0.0] & C13[0.0]
+               // 9 - other
+Option_Time = 1; // 0 - Record Time spectra only if Selected particle crosses the border
+                 // 1 - Record Time spectra for All the particles
+Option_Record = 1;   // 0 - Record Incident  energy into Particle files
+                     // 1 - Record Deposited energy into Particle files
+Option_OutFiles = 0;   // 0 - Do NOT Output individual detector spectra files
+                       // 1 - Output individual detector spectra files
+
+NHistMax - number of bins in Energy & Time histograms
+
+EneDivFact   - EHistMax[MeV] = NHistMax/EneDivFact
+TimeMultFact - THistMax[ns] = NHistMax*TimeMultFact
+
+PackChan = 5. //microseconds to pile-up events
+AvgTimeContract = 0 //Average the times or not when contracting energy deposition over time spectrum - PileUp)
+                    // 0 - False
+		    // 1 - True
+
+HistEneTime - Algorithm to compute Energy and Time
+              //0 - OLD simple method
+	      //1 - automatic analysis of Energy deposited over Time (histograms)
