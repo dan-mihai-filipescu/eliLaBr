@@ -70,3 +70,6 @@ In **interactive mode**, user should start with `control/execute commands`.
 /physics_engine/neutron/energyLimit 0. GeV
 /physics_engine/neutron/timeLimit 1500000. ns
 ```
+  ## 3 - HISTOGRAMMING
+  
+  During the simulation run, several 1D & 2D histograms can be incremented.
