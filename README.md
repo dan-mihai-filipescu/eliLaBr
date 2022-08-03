@@ -34,3 +34,23 @@ In **interactive mode**, user should start with `control/execute commands`.
   #/run/beamOn #(int)NumberOfEvents
   ```
   
+  ## 1 - GEOMETRY DEFINITION
+  
+  Several geometry macrocommands are implemented in `eliLaBr_DetectorMessenger` class.
+  
+  A list with these macrocommands can be found in **`SetGeometry.mac`** macrofile which should be loaded into **`commands`** macrofile.
+  
+  **TARGET** is made *sensitive* and can be used as a detector. Three example cases are listed into **`SetGeometry.mac`**,and the corresponding block of macro-commands can be un-commented depending on the needs:
+  - *TARGET INSIDE 4Pi detector* - this is the normal case of a target placed in the middle of the neutron detector. Be carefull on the target dimensions not to exceed the inner diameter of the beamline pipe passing through the neutron detector central axis.
+  - *TARGET INSIDE E8 Hall* - this is intended to monitor the beam spectrum and usually used to simulate a beam monitor detector. Do not forget to un-comment *TARGET HOUSING* section macro-command `/eli/det/setTGHousing true` in case you intend to.
+  - *MONITOR FOR GAMMA SOURCE* - this is intended to be an imaginary plate placed in front of the gamma-beam prior to collimation, in order to histogram different characteristics of the gamma-beam like spatial, energy and/or polarization distributions.
+  
+  **Neutron counters** dimensions are defined by those of the detectors existing at NewSUBARU & ELI-NP facilities, namely: 1 inch diameter and 500 mm. length, while the detector housing is considered to be made from stainless-steel.
+  
+  Two types of sensitive gas are allowed:
+  - *BF3 GAS*
+  - *3He GAS*
+  
+  so please un-comment the corresponding block of macro-commands.
+  
+  There are allowed a maximum number of **three** concentric rings of neutron counters around the central beampipe passing through the axis of the polyehylene moderator cube..
