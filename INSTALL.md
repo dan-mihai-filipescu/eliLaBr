@@ -1,0 +1,30 @@
+This Geant4 simulation package is intended to build executable and run it from 
+`~/geant4_workdir` directory.
+
+The package needs Geant4-9.6 version and ROOT-6.12 (or newer).
+We are currently working to adapt the package source code in order to be able
+to compile also in Geant4-10 & Geant4-11
+
+Geant4 package must include all optional physics databases (`G4NDL`, `G4EMLOW`, 
+`Radioactive Decay`, etc.) but especially be careful to include the 
+`G4NDL4.2/ThermalScattering` library in order to be able to perform the simulation
+of neutron thermalization into polyethylene by elastic scattering of neutrons 
+with energies below 4 eV using S formalism.
+For visualization it is recommended to build Geant4 with OpenGL option and use 
+the QT user interface.
+
+Prior building the code, it is recommended that the user create `lib` folder
+into his `/home`, if not existing already, and add the following command in 
+`.bashrc`:
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/lib
+In this folder will be placed the libraries 'libTvectors.so' and 'libPileItUp.so'
+that are build during the build process and will be needed in order to run the 
+package.
+
+The code can be build by typing `make` in the main directory.
+This is relying on `GNUmakefile` script and will make also 'libTvectors.so' and 
+'libPileItUp.so' libraries.
+
+`make clean` will clean the last build of `eliLaBr` code
+`make allclean` will clean the last build of `eliLaBr` code but also the 
+'Tvectors` and the `PileItUp` builds.
