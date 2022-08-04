@@ -73,3 +73,6 @@ In **interactive mode**, user should start with `control/execute commands`.
   ## 3 - HISTOGRAMMING
   
   During the simulation run, several 1D & 2D histograms can be incremented.
+  The lists with standard macro-commands implemented by `G4AnalysisManager` controling activation of each histogram as well as fine tuning of each histogram properties are put together in two files with macro-commands:
+  - **`histos.mac`** - this file is recommended to be loaded in **`commands`** macrofile in the normal case when the gamma beam is collimated and sent on target (we can monitor the beam spot on target for example);
+  - **`histor_monitor.mac`** - this file is recommended to be loaded in **`commands`** macrofile when we are interested to monitor the gamma-beam properties prior to collimation.
