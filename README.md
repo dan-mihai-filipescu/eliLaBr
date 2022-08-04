@@ -73,6 +73,25 @@ In **interactive mode**, user should start with `control/execute commands`.
   ## 3 - HISTOGRAMMING
   
   During the simulation run, several 1D & 2D histograms can be incremented.
-  The lists with standard macro-commands implemented by `G4AnalysisManager` controling activation of each histogram as well as fine tuning of each histogram properties are put together in two files with macro-commands:
+  The lists with standard macro-commands implemented by `G4AnalysisManager` controlling activation of each histogram as well as fine tuning of each histogram properties are put together in two files with macro-commands:
   - **`histos.mac`** - this file is recommended to be loaded in **`commands`** macrofile in the normal case when the gamma beam is collimated and sent on target (we can monitor the beam spot on target for example);
   - **`histor_monitor.mac`** - this file is recommended to be loaded in **`commands`** macrofile when we are interested to monitor the gamma-beam properties prior to collimation.
+  
+  ## 4 - THE PRIMARY GENERATOR
+  
+  The properties of the source of the primary particles that initiate each simulation event can be specified in the file **`incident_energy.in`**. This file should always be present in the folder from where **eliLaBr** code was launched. Inside this file, the user will find the explanation of each parameter that can be set.
+  
+  The main source of primary generator consists from gamma rays generated along the straight synchrotron beamline outside the experimental hall. Thus, one important option to be set in **`incident_energy.in`** concerns the use of an ideal monoenergetic pencil-like gamma-beam or to perform a realistic simulation of Laser-Compton scattering (LCS) of eV photons on relativistic electrons considering a Gaussian model to describe the laser and Twiss parameter formalism in order to describe the electron beam. Laser polarization along with its influence is taken into account using the Stokes parameter formalism or the polarization vector formalism. All the settings & parameters concerning the modelling of LCS interaction, along with their description, can be specified in the **`incident_gamma.in`** file. This file should also be present in the folder from where **eliLaBr** code was launched.
+  
+  Besides considering a gamma-ray beam as primary source, the user can also specify in **`incident_energy.in`** file, probalibities of gamma and/or neutron emmision for calibration purposes from inside/near detectors. If the sum of the neutron and gamma emission probabilities is less than 1, the remaining fraction up 100% is used to generate gamma-ray beam.
+  Calibration gamma photons and/or neutrons can be generated from a planar disc with a specified radius within the target or we can specify a given displacement relative to the target of the planar emission disc.
+  Calibration gamma ray spectrum is choosed to be identic with the one of the ideal gamma-ray beam and can be monochromatic, or can be provided numericallt into an ASCII file. , and the angular emission distribution can be:
+  - isotropic;
+  - E1 distribution;
+  - M1 distribution
+  
+  relative to the simetry axis of the planar emission disc / neutron detector axis.
+  
+  The neutron spectrum can be monochromatic or acording to Weiskopf-Ewing evaporation spectrum with a given temperature in MeV, while the angular emission distribution can be:
+  - isotropic;
+  - P wave neutrons (L=1).
