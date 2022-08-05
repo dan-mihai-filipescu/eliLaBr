@@ -97,3 +97,20 @@ In **interactive mode**, user should start with `control/execute commands`.
   The neutron spectrum can be monochromatic or according to Weiskopf-Ewing evaporation spectrum with a given temperature in MeV, while the angular emission distribution can be:
   - isotropic;
   - P wave neutrons (L=1).
+  
+  ## 5 - TRACKING & HITS
+  
+  In **eliLaBr** code the target and neutron counters are made *Sensitive Detectors*. Thus, for this detectors, a dedicated *Tracker* class is responsible to process each *Step* within an *Event* in order to extract information like:
+  - Track ID;
+  - Parent ID - the Track ID of the particle that generated the current particle on which *Track* we are currently;
+  - Global Time - time since the *Event*, to which this *Track* belongs, is created;
+  - Particle Kinetic Energy on current *Step*;
+  - Total Energy Deposit - energy deposited along the current *Step*;
+  - Particle name;
+  - Volume name in which the current *Step* is located;
+  - Position of current *Step*, taken from the *PreStepPoint*;
+  - Boolean confirming (or not) that particle just Entered in the detector boundary - taken from the *PreStepPoint*;
+  - Boolean confirming (or not) that the particle just Exit the detector boundary - taken from the *PostStepPoint*;
+  - Replica number of the current detector in which the *Step* is located - this is useful to get the neutron counter index number.
+  
+  All these information collected from a *Step* residing in a *Sensitive Detector* is put together into a memory unit cell structure constituting the so-called *Hit*. Thus, for an *Event* we are putting together a *Collection (or Vector) of Hits* residing in the *Sensitive Detectors*.
