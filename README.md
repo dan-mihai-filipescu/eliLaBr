@@ -122,3 +122,8 @@ In **interactive mode**, user should start with `control/execute commands`.
   Also we check if any radiation passes the boundary of a detector/target (towards detector/target), without being interested if any energy was deposited or not, in that particular detector during the entire event, and we store the multiplicity of all detectors which were crossed by any radiation, the detector index number, what kind of radiation was, and with what incident energy.
   
   All information obtained in *End Of Event Action* method by processing the *Hits Collection* is written into a **ROOT** file, event by event, in order to be able to sort the events later, depending on the desired conditions, according to different imagined scenarios. Unfortunately, this event file is always named **`nai_9_MeV.root`**, but this limitation will be eliminated in a future release of **eliLaBr** code.
+  
+  ## Tvectors library
+  
+  **`Tvectors`** dynamic library provides the classes
+  
