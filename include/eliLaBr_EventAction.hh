@@ -62,7 +62,11 @@ public:
     void EndOfEventAction(const G4Event*);
 	void SetSaveThreshold(G4int save);
 	void SetEventVerbose(G4int v){fVerbose=v;}
+#ifdef OLD_ROOT
+	void QuickSort(Float_t *xpeaks, int left, int right);
+#else
 	void QuickSort(Double_t *xpeaks, int left, int right);
+#endif
 
 // private:
 	G4int				fSaveThreshold;
@@ -93,7 +97,11 @@ TH1D* vEDepinTime [Ndet];
 TH1D* vEDepinTimeTarget;
 TSpectrum* s;
 Int_t nfound, imin, imax, nrbin;
+#ifdef OLD_ROOT
+Float_t* xpeaks;
+#else
 Double_t* xpeaks;
+#endif
 Tvectors* VectorOfPeaks;
 Tvectors* VectorOfTarget;
 TSTLvector* PeaksInCounters;
