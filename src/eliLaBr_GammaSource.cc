@@ -55,7 +55,8 @@ eliLaBr_GammaSource::eliLaBr_GammaSource(eliLaBr_DetectorConstruction* Det):Dete
     in >> LaserType;  // LaserType(G4int) can be 1(CO2), 2(INAZUMA), 3(TALON)
     if(LaserType!=1)
       if(LaserType!=2)
-        if(LaserType!=3) LaserType =2;  //The default is INAZUMA Laser
+	if(LaserType!=3)
+          if(LaserType!=4) LaserType =2;  //The default is INAZUMA Laser
 
     if(LaserType==1)   // CO2 LASER parameters
       {
@@ -89,6 +90,17 @@ eliLaBr_GammaSource::eliLaBr_GammaSource(eliLaBr_DetectorConstruction* Det):Dete
       WaveLength = 532.;           //nm.
       }
 
+    if(LaserType==4)   // ELI-NP conditions (no lenses)
+      {
+      LaserToMidBL1 = 0.;          //mm.
+      LaserToLens = 0.;            //mm.
+      defaultLaserDiameter = 0.050;//mm.
+      defaultSquareQF = 1.2;       // NO Dim!
+      defaultFocus = 0.;           //mm.
+      WaveLength = 532.;           //nm.
+      //WaveLength = 0.05;
+      }
+
     // Laser diameter at beam waist (from specifications)
     in >> LaserDiameter;  if(LaserDiameter<=0.) LaserDiameter = defaultLaserDiameter;
     // Laser beam quality factor, adimensional
@@ -103,16 +115,25 @@ eliLaBr_GammaSource::eliLaBr_GammaSource(eliLaBr_DetectorConstruction* Det):Dete
     WaveLength = WaveLength * nm;
     lwl = WaveLength;
 
+   RadiusBeforeFocus = LaserDiameter / 2.;
+   RayleighBeforeFocus = pi * RadiusBeforeFocus * RadiusBeforeFocus / (SquareQF * WaveLength);
+   if(LaserType!=4)
+     {
 // Gaussian optics computation for LASER focusing by lens
-    RadiusBeforeFocus = LaserDiameter / 2.;
-    RayleighBeforeFocus = pi * RadiusBeforeFocus * RadiusBeforeFocus / (SquareQF * WaveLength);
-    LensToLWaist = 1. / (1./Focus - 
-      1./(LaserToLens + RayleighBeforeFocus*RayleighBeforeFocus/(LaserToLens-Focus)));
-    RayleighAfterFocus = sqrt((1. / (1./Focus - 1./LaserToLens) - LensToLWaist) * 
-      (LensToLWaist - Focus));
-    RadiusAfterFocus = sqrt(RayleighAfterFocus * SquareQF * WaveLength / pi);
+      LensToLWaist = 1. / (1./Focus - 
+        1./(LaserToLens + RayleighBeforeFocus*RayleighBeforeFocus/(LaserToLens-Focus)));
+      RayleighAfterFocus = sqrt((1. / (1./Focus - 1./LaserToLens) - LensToLWaist) * 
+        (LensToLWaist - Focus));
+      RadiusAfterFocus = sqrt(RayleighAfterFocus * SquareQF * WaveLength / pi);
 // position of Laser beam waist (displacement from Electron waist)
-    dispZ = LaserToMidBL1 - LensToLWaist;
+      dispZ = LaserToMidBL1 - LensToLWaist;
+      }
+      else
+      {
+      RayleighAfterFocus = RayleighBeforeFocus;
+      RadiusAfterFocus = RadiusBeforeFocus;
+      dispZ = 0.*mm;
+      }
     rayleigh = RayleighAfterFocus;
 
 // Print LASER Parameters
@@ -120,21 +141,25 @@ eliLaBr_GammaSource::eliLaBr_GammaSource(eliLaBr_DetectorConstruction* Det):Dete
     if(LaserType==1) G4cout<<"Laser Type: CO2"<<G4endl;
     if(LaserType==2) G4cout<<"Laser Type: INAZUMA"<<G4endl;
     if(LaserType==3) G4cout<<"Laser Type: TALON"<<G4endl;
+    if(LaserType==4) G4cout<<"Laser Type: ELI-NP"<<G4endl;
     G4cout<<"Laser wavelength = "<<WaveLength/nm<<" nm."<<G4endl;
     G4cout<<"Laser quality factor ^2 = "<<SquareQF<<G4endl;
     G4cout<<"Laser diameter = "<<LaserDiameter/mm<<" mm."<<G4endl;
-    G4cout<<"Lens focal length = "<<Focus/mm<<" mm."<<G4endl;
-    G4cout<<"Distance from Laser output to Electron waist = "<<LaserToMidBL1/mm<<" mm."<<G4endl;
-    G4cout<<"Laser --> Lens Distance = "<<LaserToLens/mm<<" mm."<<G4endl;
-    G4cout<<"Laser radius at waist before lens = "<<RadiusBeforeFocus/mm<<" mm."<<G4endl;
-    G4cout<<"Raylegh before lens = "<<RayleighBeforeFocus/mm<<" mm."<<G4endl;
-    G4cout<<"Lens --> Waist Distance = "<<LensToLWaist/mm<<" mm."<<G4endl;
+    if(LaserType!=4)
+      {
+      G4cout<<"Lens focal length = "<<Focus/mm<<" mm."<<G4endl;
+      G4cout<<"Distance from Laser output to Electron waist = "<<LaserToMidBL1/mm<<" mm."<<G4endl;
+      G4cout<<"Laser --> Lens Distance = "<<LaserToLens/mm<<" mm."<<G4endl;
+      G4cout<<"Laser radius at waist before lens = "<<RadiusBeforeFocus/mm<<" mm."<<G4endl;
+      G4cout<<"Raylegh before lens = "<<RayleighBeforeFocus/mm<<" mm."<<G4endl;
+      G4cout<<"Lens --> Waist Distance = "<<LensToLWaist/mm<<" mm."<<G4endl;
+      }
     G4cout<<"Laser radius at waist after lens = "<<RadiusAfterFocus/mm<<" mm."<<G4endl;
     G4cout<<"Raylegh after lens = "<<RayleighAfterFocus/mm<<" mm."<<G4endl;
     G4cout<<"Laser displacement = "<<dispZ/mm<<" mm."<<G4endl;
 
     ww = RadiusAfterFocus / 2.;  // Laser sigma at beam waist (according to ISO D=4sigma definition)
-
+    
 // OLD input code; Not needed any more. (08-Nov-2021)
 /*  in >> ww; ww = ww * mm;
     in >> m2;
@@ -153,13 +178,21 @@ eliLaBr_GammaSource::eliLaBr_GammaSource(eliLaBr_DetectorConstruction* Det):Dete
     in >> sigx0;
     in >> emmitx;
     if(sigx0>0.) sigx0 = sigx0 * mm;
-    if(emmitx>0.) emmitx = emmitx * mm; // / (Beta*Gamma);
+    if(emmitx>0.)
+      {
+      emmitx = emmitx * mm; 
+      if(LaserType==4) emmitx /= (Beta*Gamma);
+      }
     if((sigx0<=0.)||(emmitx<=0.)) XfromFile = true;
       else betax0 = sigx0 * sigx0 / emmitx;
     in >> sigy0;
     in >> emmity;
     if(sigy0>0.) sigy0 = sigy0 * mm;
-    if(emmity>0.) emmity = emmity * mm; // / (Beta*Gamma);
+    if(emmity>0.)
+      {
+      emmity = emmity * mm;
+      if(LaserType==4) emmity /= (Beta*Gamma);
+      }
     if((sigy0<=0.)||(emmity<=0.)) YfromFile = true;
       else betay0 = sigy0 * sigy0 / emmity;
     in >> laser_theta0;     laser_theta0 = laser_theta0 * deg;
@@ -215,7 +248,7 @@ eliLaBr_GammaSource::eliLaBr_GammaSource(eliLaBr_DetectorConstruction* Det):Dete
     ele_r2 = classic_electr_radius * classic_electr_radius;
     G4cout<<"Electron C.S. = "<<pi*ele_r2/barn<<" barn"<<G4endl;
     //Compute photon energy
-    eph0 = hbarc * 2. * pi / lwl; G4cout<<"\n =============>>  ENERGIA FOTONULUI: "<<eph0<<G4endl;
+    eph0 = hbarc * 2. * pi / lwl; G4cout<<"\n =============>>  ENERGIA FOTONULUI: "<<eph0/eV<<" eV"<<G4endl;
 
     //eph0 = 0.5*MeV;
 
@@ -668,37 +701,57 @@ void eliLaBr_GammaSource::NextGamma() {
       }
     else
       {
+    taurot = 0;
+    if(PLIN_MODEL_SW==1)
+      {
+      if (G4UniformRand()<Plin) taurot = 0.;
+        else taurot = 2. * pi * G4UniformRand();
+      }
+    else if(PLIN_MODEL_SW==2)
+      {
+      if (G4UniformRand()<Plin) taurot = 0.;
+        else taurot = PolAngleGenerator(1.-Plin);
+      }
+    //analysisManager->FillH1(9,taurot+taui);
+        
 //Generate photon direction and polarization Lorentz vector
     ey.set(0.,1.,0.);
+    ey.rotateZ(taurot+taui);
+    taurot = taui;
     if(!IDEAL_LASER_SW)
         {
         laser_dir0.set(0.,0.,1.);
-        pol0.set(laser_dir0.cross(ey),0.);
+        //pol0.set(laser_dir0.cross(ey),0.);
         //Rotate laser beam 180 deg against electron beam
         //laser_theta = 180.*deg - laser_theta0;
         //laser_phi = 180.*deg + laser_phi0;
-        laser_dir0.rotateY(180.*deg - laser_theta0);
+        /*laser_dir0.rotateY(180.*deg - laser_theta0);
         laser_dir0.rotateZ(laser_phi0 + 180.*deg);
         laser_theta = laser_dir0.getTheta();
-        laser_phi = laser_dir0.getPhi();
+        laser_phi = laser_dir0.getPhi();*/
         }
     else
         {
         laser_dir0.set ( xl*zl/(rayleigh*rayleigh+zl*zl), yl*zl/(rayleigh*rayleigh+zl*zl), 1. );
+        //G4cout<<xl*zl/(rayleigh*rayleigh+zl*zl)<<"; "<<yl*zl/(rayleigh*rayleigh+zl*zl)<<"; "<<1. <<G4endl;
         //G4double angle0 = laser_dir0.getPhi();
         //if(angle0<0.) angle0=2.*pi+angle0;
         //analysisManager->FillH1(5,angle0);
-        pol0.set(laser_dir0.cross(ey),0.);
+        //pol0.set(laser_dir0.cross(ey),0.);
         //pol0.set(ey.cross(laser_dir0),0.);
         //G4double angle0 = pol0.getV().getPhi();
         //if(angle0<0.) angle0=2.*pi+angle0;
         //analysisManager->FillH1(5,angle0);
         //Rotate laser beam 180 deg against electron beam
-        laser_dir0.rotateY(180.*deg - laser_theta0);
+        /*laser_dir0.rotateY(180.*deg - laser_theta0);
         laser_dir0.rotateZ(laser_phi0 + 180.*deg);
         laser_theta = laser_dir0.getTheta();
-        laser_phi = laser_dir0.getPhi();
+        laser_phi = laser_dir0.getPhi();*/
         }
+    laser_dir0.rotateY(180.*deg - laser_theta0);
+    laser_dir0.rotateZ(laser_phi0 + 180.*deg);
+    laser_theta = laser_dir0.getTheta();
+    laser_phi = laser_dir0.getPhi();
 
 //Generate photon Lorentz vector
     eph = eph0 * G4RandGauss::shoot(1.0,deph/100.);
@@ -710,14 +763,15 @@ void eliLaBr_GammaSource::NextGamma() {
     analysisManager->FillH2(9, phimp0.getX()/eph, phimp0.getY()/eph);
 
 //Rotate polarization Lorentz vector according to laser photon direction
-    pol0.rotateY(laser_theta0);
+//    pol0.rotateY(laser_theta0);
     //analysisManager->FillH1(5,pol0.getV().getPhi());
 //    pol0.rotateZ(laser_phi0);
 //    pol0.rotateY(laser_theta);
 //    pol0.rotateZ(laser_phi);
+    pol0.set(((phimp0.getV()).cross(ey)).unit(),0.);
+    analysisManager->FillH1(9,(pol0.getV()).getPhi());
 
-
-    taurot = 0;
+/*    taurot = 0;
     if(PLIN_MODEL_SW==1)
       {
       if (G4UniformRand()<Plin) taurot = 0.;
@@ -740,6 +794,7 @@ void eliLaBr_GammaSource::NextGamma() {
     analysisManager->FillH1(9,taurot+taui);
     taurot = taui;
     pol0.rotate(phimp0.getV(),-taurot);
+*/    
     //G4double angle0 = pol0.getV().getPhi();
     //if(angle0<0.) angle0=2.*pi+angle0;
     //analysisManager->FillH1(5,taurot);
@@ -1099,6 +1154,7 @@ void eliLaBr_GammaSource::KNRand(G4double ep, G4double egmin, G4double egmax, G4
     // OLD
     //KNmax = 2. + 2./x;
 
+//    do {
     do {
       rnum = G4UniformRand();
       //*eg = egmin + (egmax - egmin) * rnum;
@@ -1118,6 +1174,7 @@ void eliLaBr_GammaSource::KNRand(G4double ep, G4double egmin, G4double egmax, G4
     *eg = kgam*electron_mass_c2;
     //*thrnd = std::acos(1. - electron_mass_c2*(1./ *eg - 1./ep));
     *thrnd = std::acos(1. + t);
+//    } while((89.<*thrnd/deg)&&(*thrnd/deg<91.));
 }
 
 void eliLaBr_GammaSource::Phi_gen(G4double t, G4double u, G4double Pt, G4double *Phi_ang)

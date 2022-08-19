@@ -362,7 +362,7 @@ if (rand_prob < (1.-(GammaProbability+NeutronProbability)))
   if(PolAngle>0.) {direction.rotateZ(PolAngle); phi = phi+PolAngle; if(phi>(2.*pi)) phi = phi - 2.*pi;}
   particleGun->SetParticleMomentumDirection( direction );     
   particleGun->SetParticleDefinition(particleTable->FindParticle(particleName="gamma"));
-  if(gamma_energy_In<0.) gamma_energy = gamma_energy_In * MeV;
+  if(gamma_energy_In<0.) gamma_energy = -gamma_energy_In * MeV;
   particleGun->SetParticleEnergy( gamma_energy );
   particleGun->GeneratePrimaryVertex(anEvent);
   //if ((GammaProbability+NeutronProbability)>=1.) 

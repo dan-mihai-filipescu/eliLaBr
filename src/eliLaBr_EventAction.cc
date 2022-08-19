@@ -490,11 +490,20 @@ void eliLaBr_EventAction::SetSaveThreshold(G4int save)
 {
 }
 
+#ifdef OLD_ROOT
+void eliLaBr_EventAction::QuickSort(Float_t *x, int left, int right)
+#else
 void eliLaBr_EventAction::QuickSort(Double_t *x, int left, int right)
+#endif
 {
 int i = left, j = right;
+#ifdef OLD_ROOT
 Double_t ax;
 Double_t pivot = x[(left + right) / 2];
+#else
+Float_t ax;
+Float_t pivot = x[(left + right) / 2];
+#endif
 
 /* partition */
 while (i <= j)
