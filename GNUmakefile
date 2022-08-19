@@ -10,6 +10,10 @@ G4EXLIB := true
 TVECTORSDIR	= ./Tvectors/
 ANALYSISDIR	= ./DataAnalysis/
 
+#DEFINES =	-DOLD_ROOT
+DEFINES =
+
+CPPFLAGS += $(DEFINES)
 CPPFLAGS += $(shell root-config --cflags)
 CPPFLAGS += -I$(TVECTORSDIR)
 CPPFLAGS += -Wno-deprecated-declarations
