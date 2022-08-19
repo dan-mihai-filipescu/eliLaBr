@@ -62,7 +62,7 @@ clean:
 		@rm -f $(OBJS) core *Dict.*
 
 distclean:      clean
-		@rm -f $(PROGRAMS) *Dict.* *.def *.exp \
+		@rm -f $(PROGRAMS) *Dict.* *.def *.exp *.pcm\
 		   *.ps *.so *.lib *.dll *.d *.log .def so_locations \
 		   files/*
 		@rm -rf cxx_repository
