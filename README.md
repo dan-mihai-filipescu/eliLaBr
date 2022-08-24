@@ -167,4 +167,6 @@ In **interactive mode**, user should start with `control/execute commands`.
   - H.T. Nyhus et al. *"Photoneutron cross sections for neodymium isotopes: Toward a unified understanding of (gamma, n) and (n, gamma) reactions in the rare earth region"*, Phys. Rev. C **91** 015808 (2015) [10.1103/PhysRevC.91.015808](https://doi.org/10.1103/PhysRevC.91.015808)
   - D. Filipescu et al. *"Geant4 simulations on Compton scattering of laser photons on relativistic electrons"*, AIP Conference Proceedings **1645** 322 (2015) [10.1063/1.4909594](https://doi.org/10.1063/1.4909594)
   - I. Gheorghe et al. *"Absolute photoneutron cross sections of Sm isotopes"*, AIP Conference Proceedings **1645** 327 (2015) [10.1063/1.4909595](https://doi.org/10.1063/1.4909595)
+  - D. Filipescu et al. *"Photoneutron cross sections for samarium isotopes: Toward a unified understanding of (gamma, n) and (n,gamma) reactions in the rare earth region"*, Phys. Rev. C **90** 064616 (2014) [10.1103/PhysRevC.90.064616](https://doi.org/10.1103/PhysRevC.90.064616)
+  - H. Utsunomiya et al. *"Energy Calibration of the NewSUBARU Storage Ring for Laser Compton-Scattering Gamma Rays and Applications"*, IEEE Transactions on Nuclear Science **61** 1252 (2014) [10.1109/TNS.2014.2312323](https://doi.org/10.1109/TNS.2014.2312323)
   
