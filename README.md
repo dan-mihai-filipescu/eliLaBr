@@ -143,4 +143,7 @@ In **interactive mode**, user should start with `control/execute commands`.
   - I. Gheorghe et al. *"Updated neutron-multiplicity sorting method for producing photoneutron average energies and resolving multiple firing events"*, NIMA **1019** 165867 (2021) [10.1016/j.nima.2021.165867](https://doi.org/10.1016/j.nima.2021.165867)
   - S. Belyshev et al. *"New Bi-209 photodisintegration data and physical criteria of data reliability"*, EPJ Web of Conf. **239** 01031 (2020) [10.1051/epjconf/202023901031](https://doi.org/10.1051/epjconf/202023901031)
   - H. Utsunomiya et al. *"GDR cross sections updated in the IAEA-CRP"*, EPJ Web of Conf. **239** 01002 (2020) [10.1051/epjconf/202023901002](https://doi.org/10.1051/epjconf/202023901002)
+  - T. Kawano et al. *"IAEA Photonuclear Data Library 2019"*, Nuclear Data Sheets **163** 109-162 (2020) [10.1016/j.nds.2019.12.002](https://doi.org/10.1016/j.nds.2019.12.002)
+  - M. Krzysiek et al. *"PHOTONEUTRON CROSS-SECTION MEASUREMENTS FOR Ho-165 BY THE DIRECT NEUTRON-MULTIPLICITY SORTING AT NEWSUBARU"*, ACTA PHYSICA POLONICA B **50** 487 (2019) [10.5506/APhysPolB.50.487](https://doi.org/10.5506/APhysPolB.50.487)
+  - H. Utsunomiya et al. *"gamma-ray strength function for thallium isotopes relevant to the Pb-205-(TI)-T-205 chronometry"*, Phys. Rev. C **99** 024609 (2019) [10.1103/PhysRevC.99.024609](https://doi.org/10.1103/PhysRevC.99.024609)
   
