@@ -164,6 +164,7 @@ In **interactive mode**, user should start with `control/execute commands`.
   - T. Renstrom et al. *"First evidence of low energy enhancement in Ge isotopes"*, EPJ Web of Conf. **93** 04003 (2015) [10.1051/epjconf/20159304003](https://doi.org/10.1051/epjconf/20159304003)
   - D. Filipescu et al. *"Photoneutron cross section measurements on Sm isotopes"*, EPJ Web of Conf. **93** 02006 (2015) [10.1051/epjconf/20159302006](https://doi.org/10.1051/epjconf/20159302006)
   - H. Utsunomiya et al. *"Photoneutron Reactions in Nuclear Astrophysics"*, Journal of Physics Conference Series **590** 012023 (2015) [10.1088/1742-6596/590/1/012023](https://doi.org/10.1088/1742-6596/590/1/012023)
+  - H. Utsunomiya et al. *"Photodisintegration of 9Be through the 1/2+ state and cluster dipole resonance"*, **92** 064323 (2015) [10.1103/PhysRevC.92.064323](https://doi.org/10.1103/PhysRevC.92.064323)
   - H.T. Nyhus et al. *"Photoneutron cross sections for neodymium isotopes: Toward a unified understanding of (gamma, n) and (n, gamma) reactions in the rare earth region"*, Phys. Rev. C **91** 015808 (2015) [10.1103/PhysRevC.91.015808](https://doi.org/10.1103/PhysRevC.91.015808)
   - D. Filipescu et al. *"Geant4 simulations on Compton scattering of laser photons on relativistic electrons"*, AIP Conference Proceedings **1645** 322 (2015) [10.1063/1.4909594](https://doi.org/10.1063/1.4909594)
   - I. Gheorghe et al. *"Absolute photoneutron cross sections of Sm isotopes"*, AIP Conference Proceedings **1645** 327 (2015) [10.1063/1.4909595](https://doi.org/10.1063/1.4909595)
