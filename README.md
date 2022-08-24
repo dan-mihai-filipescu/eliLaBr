@@ -152,4 +152,9 @@ In **interactive mode**, user should start with `control/execute commands`.
   - H. Utsunomiya et al. *"Photoneutron Reaction Data for Nuclear Physics and Astrophysics"*, EPJ Web of Conf. **178** 06003 (2018) [10.1051/epjconf/201817806003](https://doi.org/10.1051/epjconf/201817806003)
   - G. Gosta et al. *"Response function and linearity for high energy gamma-rays in large volume LaBr3:Ce detectors"*, NIMA **879** 92 (2018) [10.1016/j.nima.2017.10.018](https://doi.org/10.1016/j.nima.2017.10.018)
   - H. Utsunomiya et al. *"Direct neutron-multiplicity sorting with a flat-efficiency detector"*, NIMA **871** 135 (2017) [10.1016/j.nima.2017.08.001](https://doi.org/10.1016/j.nima.2017.08.001)
+  - I. Gheorghe et al. *"Photoneutron cross-section measurements in the Bi-209(gamma, xn) reaction with a new method of direct neutron-multiplicity sorting"*, Phys. Rev. C **96** 044604 (2017) [10.1103/PhysRevC.96.044604](https://doi.org/10.1103/PhysRevC.96.044604)
+  - I. Gheorghe et al. *"Partial photoneutron cross section measurements on Bi-209"*, EPJ Web of Conf. **146** 05011 (2017) [10.1051/epjconf/201714605011](https://doi.org/10.1051/epjconf/201714605011)
+  - H. Utsunomiya et al. *"A unified understanding of (gamma,n) and (n,gamma) reactions and direct neutron-multiplicity sorting"*, EPJ Web of Conf. **146** 05002 (2017) [10.1051/epjconf/201714605002](https://doi.org/10.1051/epjconf/201714605002)
+  - T. Renstrom et al. *"Low-energy enhancement in the gamma-ray strength functions of Ge-73,Ge-74"*, Phys. Rev. C **93** 064302 (2016) [10.1103/PhysRevC.93.064302](https://doi.org/10.1103/PhysRevC.93.064302)
+  - W. Luo et al. *"Estimates for production of radioisotopes of medical interest at Extreme Light Infrastructure - Nuclear Physics facility"*, Applied Physics B **122** 8 (2016) [10.1007/s00340-015-6292-9](https://doi.org/10.1007/s00340-015-6292-9)
   
