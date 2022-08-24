@@ -139,5 +139,8 @@ In **interactive mode**, user should start with `control/execute commands`.
   
   ## Papers
   
-  Several papers made use of **eliLaBr** code over the time
+  Several papers made use of **eliLaBr** code over the time:
+  - I. Gheorghe et al. *"Updated neutron-multiplicity sorting method for producing photoneutron average energies and resolving multiple firing events"*, NIMA **1019** 165867 (2021) [10.1016/j.nima.2021.165867](https://doi.org/10.1016/j.nima.2021.165867)
+  - S. Belyshev et al. *"New Bi-209 photodisintegration data and physical criteria of data reliability"*, EPJ Web of Conf. **239** 01031 (2020) [10.1051/epjconf/202023901031](https://doi.org/10.1051/epjconf/202023901031)
+  - H. Utsunomiya et al. *"GDR cross sections updated in the IAEA-CRP"*, EPJ Web of Conf. **239** 01002 (2020) [10.1051/epjconf/202023901002](https://doi.org/10.1051/epjconf/202023901002)
   
