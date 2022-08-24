@@ -4,11 +4,11 @@ GEANT4 LCS simulation on flat eff. n-detector based on 3He counters embedded int
 
 ## Developers
 
-Dan Mihai FILIPESCU <dan.filipescu@nipne.ro>
+Dan Mihai FILIPESCU[^1] <dan.filipescu@nipne.ro>
 
-Adriana Ioana GHEORGHE <ioana.gheorghe@nipne.ro>
+Adriana Ioana GHEORGHE[^1] <ioana.gheorghe@nipne.ro>
 
-Horia Hulubei - National Institute for Phisics and Nuclear Engineering, Bucharest-Magurele, ROMANIA
+[^1]: [Horia Hulubei - National Institute for Phisics and Nuclear Engineering, Bucharest-Magurele, ROMANIA](https://www.nipne.ro)
 
 ## 0 - Usage
 
