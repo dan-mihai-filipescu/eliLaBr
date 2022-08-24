@@ -14,7 +14,7 @@ Adriana Ioana GHEORGHE[^1] <ioana.gheorghe@nipne.ro>
 
 **eliLaBr** was created starting with 2013 during first photoneutron cross section measurements performed at [Laser Compton Scattering (LCS) Gamma-ray beam](https://www.lasti.u-hyogo.ac.jp/NS-en/facility/bl01/), beamline BL01/GACKO Hutch from [NewSUBARU](http://www.spring8.or.jp/en/about_us/whats_sp8/facilities/accelerators/new_subaru/) synchrotron, SPring8, JAPAN.
 
-The code simulate Compton interaction between laser and relativistic electron beams. Laser is modelled using Gaussian beams, while the electron beam is described using Twiss parameter formalism. More details are given in [ApendixC](raw/main/doc/ELI_TDR3-GANT_ApendixC1_V1.9.4_April_2015.pdf) of ELI-GANT TDR (**E**xtreme **L**ight **I**nfrastructure - **G**amma **A**bove **N**eutron **T**hreshold - **T**echnical **D**esign **R**eport)
+The code simulate Compton interaction between laser and relativistic electron beams. Laser is modelled using Gaussian beams, while the electron beam is described using Twiss parameter formalism. More details are given in [ApendixC](/doc/ELI_TDR3-GANT_ApendixC1_V1.9.4_April_2015.pdf) of ELI-GANT TDR (**E**xtreme **L**ight **I**nfrastructure - **G**amma **A**bove **N**eutron **T**hreshold - **T**echnical **D**esign **R**eport)
 
 ## 0 - Usage
 
