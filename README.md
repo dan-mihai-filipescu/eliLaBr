@@ -157,4 +157,5 @@ In **interactive mode**, user should start with `control/execute commands`.
   - H. Utsunomiya et al. *"A unified understanding of (gamma,n) and (n,gamma) reactions and direct neutron-multiplicity sorting"*, EPJ Web of Conf. **146** 05002 (2017) [10.1051/epjconf/201714605002](https://doi.org/10.1051/epjconf/201714605002)
   - T. Renstrom et al. *"Low-energy enhancement in the gamma-ray strength functions of Ge-73,Ge-74"*, Phys. Rev. C **93** 064302 (2016) [10.1103/PhysRevC.93.064302](https://doi.org/10.1103/PhysRevC.93.064302)
   - W. Luo et al. *"Estimates for production of radioisotopes of medical interest at Extreme Light Infrastructure - Nuclear Physics facility"*, Applied Physics B **122** 8 (2016) [10.1007/s00340-015-6292-9](https://doi.org/10.1007/s00340-015-6292-9)
+  - W. Luo et al. *"PRODUCTION OF RADIOISOTOPES OF MEDICAL INTEREST BY PHOTONUCLEAR REACTION USING ELI-NP gamma-RAY BEAM"*, ACTA PHYSICA POLONICA B **47** 763 (2016) [10.5506/APhysPolB.47.763](https://doi.org/10.5506/APhysPolB.47.763)
   
