@@ -146,4 +146,7 @@ In **interactive mode**, user should start with `control/execute commands`.
   - T. Kawano et al. *"IAEA Photonuclear Data Library 2019"*, Nuclear Data Sheets **163** 109-162 (2020) [10.1016/j.nds.2019.12.002](https://doi.org/10.1016/j.nds.2019.12.002)
   - M. Krzysiek et al. *"PHOTONEUTRON CROSS-SECTION MEASUREMENTS FOR Ho-165 BY THE DIRECT NEUTRON-MULTIPLICITY SORTING AT NEWSUBARU"*, ACTA PHYSICA POLONICA B **50** 487 (2019) [10.5506/APhysPolB.50.487](https://doi.org/10.5506/APhysPolB.50.487)
   - H. Utsunomiya et al. *"gamma-ray strength function for thallium isotopes relevant to the Pb-205-(TI)-T-205 chronometry"*, Phys. Rev. C **99** 024609 (2019) [10.1103/PhysRevC.99.024609](https://doi.org/10.1103/PhysRevC.99.024609)
+  - M. Krzysiek et al. *"Simulation of the ELIGANT-GN array performances at ELI-NP for gamma beam energies larger than neutron threshold"*, NIMA **916**  257 (2019) [10.1016/j.nima.2018.11.058](https://doi.org/10.1016/j.nima.2018.11.058)
+  - T. Renstrom et al. *"Verification of detailed balance for gamma absorption and emission in Dy isotopes"*, Phys. Rev. C **98**  054310 (2018) [10.1103/PhysRevC.98.054310](https://doi.org/10.1103/PhysRevC.98.054310)
+  - H. Utsunomiya et al. *"Photon-flux determination by the Poisson-fitting technique with quenching corrections"*, NIMA **896** 103 (2018) [10.1016/j.nima.2018.04.021](https://doi.org/10.1016/j.nima.2018.04.021)
   
