@@ -158,4 +158,5 @@ In **interactive mode**, user should start with `control/execute commands`.
   - T. Renstrom et al. *"Low-energy enhancement in the gamma-ray strength functions of Ge-73,Ge-74"*, Phys. Rev. C **93** 064302 (2016) [10.1103/PhysRevC.93.064302](https://doi.org/10.1103/PhysRevC.93.064302)
   - W. Luo et al. *"Estimates for production of radioisotopes of medical interest at Extreme Light Infrastructure - Nuclear Physics facility"*, Applied Physics B **122** 8 (2016) [10.1007/s00340-015-6292-9](https://doi.org/10.1007/s00340-015-6292-9)
   - W. Luo et al. *"PRODUCTION OF RADIOISOTOPES OF MEDICAL INTEREST BY PHOTONUCLEAR REACTION USING ELI-NP gamma-RAY BEAM"*, ACTA PHYSICA POLONICA B **47** 763 (2016) [10.5506/APhysPolB.47.763](https://doi.org/10.5506/APhysPolB.47.763)
+  - W. Luo et al. *"A data-based photonuclear simulation algorithm for determining specific activity of medical radioisotopes"*, Nuclear Science and Techniques **27** 113 (2016) [10.1007/s41365-016-0111-9](https://doi.org/10.1007/s41365-016-0111-9)
   
