@@ -161,4 +161,7 @@ In **interactive mode**, user should start with `control/execute commands`.
   - W. Luo et al. *"A data-based photonuclear simulation algorithm for determining specific activity of medical radioisotopes"*, Nuclear Science and Techniques **27** 113 (2016) [10.1007/s41365-016-0111-9](https://doi.org/10.1007/s41365-016-0111-9)
   - F. Camera et al. *"GAMMA ABOVE THE NEUTRON THRESHOLD EXPERIMENTS AT ELI-NP"*, Romanian Reports in Physics **68** S539 (2016) [RRP68_S539(2016)](http://www.rrp.infim.ro/2016_68_S.html)
   - D. Filipescu et al. *"Perspectives for photonuclear research at the Extreme Light Infrastructure - Nuclear Physics (ELI-NP) facility"*, EPJA **51** 185 (2015) [10.1140/epja/i2015-15185-9](https://doi.org/10.1140/epja/i2015-15185-9)
+  - T. Renstrom et al. *"First evidence of low energy enhancement in Ge isotopes"*, EPJ Web of Conf. **93** 04003 (2015) [10.1051/epjconf/20159304003](https://doi.org/10.1051/epjconf/20159304003)
+  - D. Filipescu et al. *"Photoneutron cross section measurements on Sm isotopes"*, EPJ Web of Conf. **93** 02006 (2015) [10.1051/epjconf/20159302006](https://doi.org/10.1051/epjconf/20159302006)
+  - H. Utsunomiya et al. *"Photoneutron Reactions in Nuclear Astrophysics"*, Journal of Physics Conference Series **590** 012023 (2015) [10.1088/1742-6596/590/1/012023](https://doi.org/10.1088/1742-6596/590/1/012023)
   
