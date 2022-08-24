@@ -12,7 +12,7 @@ Horia Hulubei - National Institute for Phisics and Nuclear Engineering, Buchares
 
 ## 0 - Usage
 
-Information regarding building installation of code can be found in [INSTALL](https://github.com/dan-mihai-filipescu/eliLaBr/blob/main/INSTALL.md) file.
+Information regarding building & installation of code can be found in [INSTALL](INSTALL.md) file.
 
 The code can be run both in 
 
@@ -136,4 +136,8 @@ In **interactive mode**, user should start with `control/execute commands`.
   ## Tvectors library
   
   **`Tvectors`** dynamic library provides the classes
+  
+  ## Papers
+  
+  Several papers made use of **eliLaBr** code over the time
   
