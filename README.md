@@ -2,6 +2,14 @@
 GEANT4 LCS simulation on flat eff. n-detector based on 3He counters embedded into polyethylene moderator
 ========================================================================================================
 
+## Developers
+
+Dan Mihai FILIPESCU <dan.filipescu@nipne.ro>
+
+Adriana Ioana GHEORGHE <ioana.gheorghe@nipne.ro>
+
+Horia Hulubei - National Institute for Phisics and Nuclear Engineering, Bucharest-Magurele, ROMANIA
+
 ## 0 - Usage
 
 The code can be run both in 
