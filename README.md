@@ -10,6 +10,10 @@ Adriana Ioana GHEORGHE[^1] <ioana.gheorghe@nipne.ro>
 
 [^1]: [Horia Hulubei - National Institute for Phisics and Nuclear Engineering, Bucharest-Magurele, ROMANIA](https://www.nipne.ro)
 
+## Introduction
+
+**eliLaBr** was created starting from 2013 during first photoneutron cross section measurements performed at [Laser Compton Scattering (LCS) Gamma-ray beam](https://www.lasti.u-hyogo.ac.jp/NS-en/facility/bl01/), beamline BL01/GACKO Hutch from [NewSUBARU](http://www.spring8.or.jp/en/about_us/whats_sp8/facilities/accelerators/new_subaru/) synchrotron, SPring8, JAPAN.
+
 ## 0 - Usage
 
 Information regarding building & installation of code can be found in [INSTALL](INSTALL.md) file.
