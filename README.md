@@ -159,4 +159,5 @@ In **interactive mode**, user should start with `control/execute commands`.
   - W. Luo et al. *"Estimates for production of radioisotopes of medical interest at Extreme Light Infrastructure - Nuclear Physics facility"*, Applied Physics B **122** 8 (2016) [10.1007/s00340-015-6292-9](https://doi.org/10.1007/s00340-015-6292-9)
   - W. Luo et al. *"PRODUCTION OF RADIOISOTOPES OF MEDICAL INTEREST BY PHOTONUCLEAR REACTION USING ELI-NP gamma-RAY BEAM"*, ACTA PHYSICA POLONICA B **47** 763 (2016) [10.5506/APhysPolB.47.763](https://doi.org/10.5506/APhysPolB.47.763)
   - W. Luo et al. *"A data-based photonuclear simulation algorithm for determining specific activity of medical radioisotopes"*, Nuclear Science and Techniques **27** 113 (2016) [10.1007/s41365-016-0111-9](https://doi.org/10.1007/s41365-016-0111-9)
+  - F. Camera et al. *"GAMMA ABOVE THE NEUTRON THRESHOLD EXPERIMENTS AT ELI-NP"*, Romanian Reports in Physics **68** S539 (2016) [RRP68_S539(2016)](http://www.rrp.infim.ro/2016_68_S.html)
   
