@@ -149,4 +149,7 @@ In **interactive mode**, user should start with `control/execute commands`.
   - M. Krzysiek et al. *"Simulation of the ELIGANT-GN array performances at ELI-NP for gamma beam energies larger than neutron threshold"*, NIMA **916**  257 (2019) [10.1016/j.nima.2018.11.058](https://doi.org/10.1016/j.nima.2018.11.058)
   - T. Renstrom et al. *"Verification of detailed balance for gamma absorption and emission in Dy isotopes"*, Phys. Rev. C **98**  054310 (2018) [10.1103/PhysRevC.98.054310](https://doi.org/10.1103/PhysRevC.98.054310)
   - H. Utsunomiya et al. *"Photon-flux determination by the Poisson-fitting technique with quenching corrections"*, NIMA **896** 103 (2018) [10.1016/j.nima.2018.04.021](https://doi.org/10.1016/j.nima.2018.04.021)
+  - H. Utsunomiya et al. *"Photoneutron Reaction Data for Nuclear Physics and Astrophysics"*, EPJ Web of Conf. **178** 06003 (2018) [10.1051/epjconf/201817806003](https://doi.org/10.1051/epjconf/201817806003)
+  - G. Gosta et al. *"Response function and linearity for high energy gamma-rays in large volume LaBr3:Ce detectors"*, NIMA **879** 92 (2018) [10.1016/j.nima.2017.10.018](https://doi.org/10.1016/j.nima.2017.10.018)
+  - H. Utsunomiya et al. *"Direct neutron-multiplicity sorting with a flat-efficiency detector"*, NIMA **871** 135 (2017) [10.1016/j.nima.2017.08.001](https://doi.org/10.1016/j.nima.2017.08.001)
   
