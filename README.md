@@ -56,7 +56,7 @@ In **interactive mode**, user should start with `control/execute commands`.
   #/run/beamOn #(int)NumberOfEvents
   ```
   
-  **Important note**: the **eliLaBr** code generate the initial seeds of the Monte Carlo simulation based on the computer clock information colected when simulation starts, thus the simulation results cannot be identically reproduced, unless one input the same seeds at the begining of the simulation (the seeds are displayed on screen at the begining).
+  **Important note**: the **eliLaBr** code generate the initial seeds of the Monte Carlo simulation based on the computer clock information colected when simulation starts, thus the simulation results cannot be identically reproduced, unless one input the same seeds at the begining of the simulation (the seeds are displayed on screen at the begining). This feature is important when using on multi-core computers - when launching **eliLaBr** multiple times using the same input, each process will run on a different core, and of course it will be launched at a slightly different time, thus the results of each process will be statistically different, allowing the user to add the simulation results of each simulation on different processor core into a single sum result.
   
   ## 1 - GEOMETRY DEFINITION
   
@@ -157,7 +157,11 @@ In **interactive mode**, user should start with `control/execute commands`.
   
   This folder contains **`PileItUp`** code which is used to perform the sorting of events saved in the **`nai_9_MeV.root`** event file produced by the **eliLaBr** GEANT4 simulation code. The code relies on **`PileItUp.in`** input file which contains self-explanatory information.
   
-  One important option specifify how many consecutive events should be packed together in order to simulate the pile-up effect on the detector due to the multiple particle within one bunch. Thus, with one unique simulation performed, we can make multiple data analysis considering different scenarios: no pile-up, or pile-up considering different distributions, averages, etc. We can consider a fixed integer number of pile-up events, or a Poisson distribution of events, providinf the average value of the Poisson distribution.
+  One important option specifify how many consecutive events should be packed together in order to simulate the pile-up effect on the detector due to the multiple particle within one bunch. Thus, with one unique simulation performed, we can make multiple data analysis considering different scenarios: no pile-up, or pile-up considering different distributions, averages, etc. We can consider a fixed integer number of pile-up events, or a Poisson distribution of events, providing the average value of the Poisson distribution. **`Tvectors`** class is used in the pile-up process, appending (DepositedEnergy, Time) pair elements to the vectors of each detector, then sorting the elements and contracting them according to a *Shaping Time* packing provided at input in order to simulate the experimental effect of a shaper.
+  
+  The user can request analysis code to make output Energy/Time spectra files for individual <sup>3</sup>He counters AND/OR for 4Pi n-detector concentric rings AND totals if ANY/OR CERTAIN particle (neutron, gamma, proton, e+, e-, deuteron, alpha, ,<sup>12</sup>C, etc.) **deposited energy** OR **only crossed the counter border**. All these options better help understanding how different precesses are taking place and unveil the details of the interaction.
+  
+  The most important task performed by the **`PileItUp`** code is the conversion of the simulation results into **GASP** format list data, which is the current list data format adopted in the experimental data acquired in the experiments performed at **RoSPHERE** array from 9MV Tandem, IFIN-HH, Romania and **GASP** array from INFN Legnaro, Italy laboratories
   
   ## Papers
   
