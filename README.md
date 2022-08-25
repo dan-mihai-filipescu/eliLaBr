@@ -56,6 +56,8 @@ In **interactive mode**, user should start with `control/execute commands`.
   #/run/beamOn #(int)NumberOfEvents
   ```
   
+  **Important note**: the **eliLaBr** code generate the initial seeds of the Monte Carlo simulation based on the computer clock information colected when simulation starts, thus the simulation results cannot be identically reproduced, unless one input the same seeds at the begining of the simulation (the seeds are displayed on screen at the begining).
+  
   ## 1 - GEOMETRY DEFINITION
   
   The general layout of the experimental setup follows the NewSUBARU experimental facility and all characteristic sizes, distances and materials: beamline BL01, synchrotron dipole magnetic filed, laser optical mirror used to insert the laser beam into the electron beamline, borosilicate vacuum window, copper gamma absorber installed into the electron beamline, gamma-beam shutter, primary and secondary gamma-beam collimators, and of course, flat efficiency neutron detector consisting from <sup>3</sup>He counters  embeded into the polyethylene moderator block. However, the experimental hall and the gamma-beam dump at the end of it, follows the ELI-NP E8 experimental hall design. This choice of experimental hall does not affect at all the simulation results in the case of <sup>3</sup>He counters 4Pi flat efficiency neutron detector. This have more influence in the case of fast-neutron detection array based on time of flight, due to the scattered neutrons on the experimental hall walls, and this justified the choice of sticking to the E8 geometry.
@@ -150,6 +152,12 @@ In **interactive mode**, user should start with `control/execute commands`.
   ## Tvectors library
   
   **`Tvectors`** dynamic library provides the classes dealing with storage of vectors of pairs (DepositedEnergy, Time) for each detector, the vector of which elements consists from previous vectors for all detectors involved in the current event and also the necessary methods to access the vector element pairs, insert/append/delete/initialize/sort/contract elements, etc. The class is needed while performing the GEANT simulation, but also in the process of sorting/analysing the simulation results.
+  
+  ## DataAnalysis package files
+  
+  This folder contains **`PileItUp`** code which is used to perform the sorting of events saved in the **`nai_9_MeV.root`** event file produced by the **eliLaBr** GEANT4 simulation code. The code relies on **`PileItUp.in`** input file which contains self-explanatory information.
+  
+  One important option specifify how many consecutive events should be packed together in order to simulate the pile-up effect on the detector due to the multiple particle within one bunch. Thus, with one unique simulation performed, we can make multiple data analysis considering different scenarios: no pile-up, or pile-up considering different distributions, averages, etc. We can consider a fixed integer number of pile-up events, or a Poisson distribution of events, providinf the average value of the Poisson distribution.
   
   ## Papers
   
