@@ -103,6 +103,8 @@ In **interactive mode**, user should start with `control/execute commands`.
   - **`histos.mac`** - this file is recommended to be loaded in **`commands`** macrofile in the normal case when the gamma beam is collimated and sent on target (we can monitor the beam spot on target for example);
   - **`histor_monitor.mac`** - this file is recommended to be loaded in **`commands`** macrofile when we are interested to monitor the gamma-beam properties prior to collimation.
   
+  In the root directory of the project, the user can find some example ROOT macros (read2.cc, read2_sum.cc, read_BeamSpot.cc, read_BeamSpot_sum.cc, etc.), that can be further extended and adapted in order to read and analyse the 1D & 2D histograms incremended during single- OR multiple-core simulations.
+  
   ## 4 - THE PRIMARY GENERATOR
   
   The properties of the source of the primary particles that initiate each simulation event can be specified in the file **`incident_energy.in`**. This file should always be present in the folder from where **eliLaBr** code was launched. Inside this file, the user will find the explanation of each parameter that can be set.
@@ -164,13 +166,16 @@ In **interactive mode**, user should start with `control/execute commands`.
   The most important task performed by the **`PileItUp`** code is the conversion of the simulated results into **GASP** list data format, which is the current list data format adopted for the acquired experimental data in the experiments performed at **RoSPHERE** array from 9MV Tandem, IFIN-HH, Romania and **GASP** array from INFN Legnaro, Italy laboratories. In this way, the user will be able to apply the same data analysis procedure to the simulated results as it would do for data acquired in a real experiment, using **GASPWare** data analysis package.
   
   In fact, **`PileItUp`** code converts the simulated list data results in two **GASP** files, using two configurations:
-  1. In the first configuration it is considered that we have only one type of detector, namely the <sup>3</sup>He counter type, while the total number of such detectors is basically the total number of physicsl detectors (31 in the case of NewSUBARU flat efficiency detector). For each detector two parameters are stored (Energy and Time), at each event (piling-up or not) per target. Only one (the **First** one) Energy & Time per event and per detector are allowed. This is the common event list data adopted at **RoSPHERE** and **GASP** arrays.
+  1. In the first configuration it is considered that we have only one type of detector, namely the <sup>3</sup>He counter type, while the total number of such detectors is basically the total number of physicsl detectors (31 in the case of NewSUBARU flat efficiency detector). For each detector two parameters are stored (Energy and Time), at each event (piling-up or not) per target. Only one (the **First** one) Energy & Time per event and per detector are allowed. This is the common event list data adopted at **RoSPHERE** and **GASP** arrays. For this case, the user can check the demo GASP setup file **`Proje.setup`**.
   2. In the second configuration it is considered that we have four types of detectors:
      - inner ring type of detectors (A);
      - middle ring type of detectors (B);
      - outer ring type of detectors (C);
      - all detectors (disregarding the ring);
-For each type of detector, the total number of detectors correspond to the total number of neutron hits per that type, considering that the vectors with (Energy, Time) hits corresponding to that detector was sorted according to time increase and contracted according to *Shaping Time*. In this second scenario, an event correspond to an entire time interval between two beam bunches, needed to allow thermalization and detection of all neutrons emited in the reaction. This second configuration is the usual one used in the photo-neutron (g,xn) cross section measurements performed at the NewSUBARU gamma-beam facility and at the (particle, xn) cross section measurements performed ar Tandem accelerators from IFIN-HH.
+
+  For each type of detector, the total number of detectors correspond to the total number of neutron hits per that type, considering that the vectors with (Energy, Time) pair hits corresponding to that detector was previously sorted according to time increase and contracted according to *Shaping Time*. In this second scenario, an event correspond to an entire time interval between two beam bunches, needed to allow thermalization and detection of all neutrons emited in the reaction. This second configuration is the usual one used in the photo-neutron (g,xn) cross section measurements performed at the NewSUBARU gamma-beam facility and at the (particle, xn) cross section measurements performed ar Tandem accelerators from IFIN-HH. For this case, the user can use the demo GASP setup file **`Proje_indv.setup`**.
+  
+  User should provide to **`PileItUp`** code also the file **`files`** which contains the the total number of events that the user want to analyse and the names of the ROOT event files that have to be analysed (this is useful if many such event files were produced in multiple-core simulations).
   
   ## Papers
   
