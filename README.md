@@ -1,6 +1,6 @@
 # eliLaBr
-GEANT4 LCS simulation on flat eff. n-detector based on 3He counters embedded into polyethylene moderator
-========================================================================================================
+GEANT4 LCS simulation on flat efficincy neutron detector based on <sup>3</sup>He counters embedded into polyethylene moderator
+===================================================================================================================
 
 ## Developers
 
@@ -57,6 +57,8 @@ In **interactive mode**, user should start with `control/execute commands`.
   ```
   
   ## 1 - GEOMETRY DEFINITION
+  
+  The general layout of experimental setup follows the NewSUBARU experimental facility: beamline BL01, synchrotron dipole magnetic filed, laser optical mirror used to insert the laser beam into the electron beamline, borosilicte vacuum window, copper gamma absorber installed into the electron beamline, gamma-beam shutter, primary and secondary gamma-beam collimators, and of course, flat efficiency neutron detector consisting from <sup>3</sup>He counters  embeded into the polyethylene moderator block.
   
   Several geometry macro-commands are implemented in `eliLaBr_DetectorMessenger` class.
   
