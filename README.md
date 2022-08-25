@@ -149,7 +149,7 @@ In **interactive mode**, user should start with `control/execute commands`.
   
   ## Tvectors library
   
-  **`Tvectors`** dynamic library provides the classes
+  **`Tvectors`** dynamic library provides the classes dealing with storage of vectors of pairs (DepositedEnergy, Time) for each detector, the vector of which elements consists from previous vectors for all detectors involved in the current event and also the necessary methods to access the vector element pairs, insert/append/delete/initialize/sort/contract elements, etc. The class is needed while performing the GEANT simulation, but also in the process of sorting/analysing the simulation results.
   
   ## Papers
   
