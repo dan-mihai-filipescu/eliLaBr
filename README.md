@@ -161,7 +161,16 @@ In **interactive mode**, user should start with `control/execute commands`.
   
   The user can request analysis code to make output Energy/Time spectra files for individual <sup>3</sup>He counters AND/OR for 4Pi n-detector concentric rings AND totals if ANY/OR CERTAIN particle (neutron, gamma, proton, e+, e-, deuteron, alpha, ,<sup>12</sup>C, etc.) **deposited energy** OR **only crossed the counter border**. All these options better help understanding how different precesses are taking place and unveil the details of the interaction.
   
-  The most important task performed by the **`PileItUp`** code is the conversion of the simulation results into **GASP** format list data, which is the current list data format adopted in the experimental data acquired in the experiments performed at **RoSPHERE** array from 9MV Tandem, IFIN-HH, Romania and **GASP** array from INFN Legnaro, Italy laboratories
+  The most important task performed by the **`PileItUp`** code is the conversion of the simulated results into **GASP** list data format, which is the current list data format adopted for the acquired experimental data in the experiments performed at **RoSPHERE** array from 9MV Tandem, IFIN-HH, Romania and **GASP** array from INFN Legnaro, Italy laboratories. In this way, the user will be able to apply the same data analysis procedure to the simulated results as it would do for data acquired in a real experiment, using **GASPWare** data analysis package.
+  
+  In fact, **`PileItUp`** code converts the simulated list data results in two **GASP** files, using two configurations:
+  1. In the first configuration it is considered that we have only one type of detector, namely the <sup>3</sup>He counter type, while the total number of such detectors is basically the total number of physicsl detectors (31 in the case of NewSUBARU flat efficiency detector). For each detector two parameters are stored (Energy and Time), at each event (piling-up or not) per target. Only one (the **First** one) Energy & Time per event and per detector are allowed. This is the common event list data adopted at **RoSPHERE** and **GASP** arrays.
+  2. In the second configuration it is considered that we have four types of detectors:
+     - inner ring type of detectors (A);
+     - middle ring type of detectors (B);
+     - outer ring type of detectors (C);
+     - all detectors (disregarding the ring);
+For each type of detector, the total number of detectors correspond to the total number of neutron hits per that type, considering that the vectors with (Energy, Time) hits corresponding to that detector was sorted according to time increase and contracted according to *Shaping Time*. In this second scenario, an event correspond to an entire time interval between two beam bunches, needed to allow thermalization and detection of all neutrons emited in the reaction. This second configuration is the usual one used in the photo-neutron (g,xn) cross section measurements performed at the NewSUBARU gamma-beam facility and at the (particle, xn) cross section measurements performed ar Tandem accelerators from IFIN-HH.
   
   ## Papers
   
