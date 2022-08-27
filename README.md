@@ -61,6 +61,12 @@ In **interactive mode**, user should start with `control/execute commands`.
   ## 1 - GEOMETRY DEFINITION
   
   The general layout of the experimental setup follows the NewSUBARU experimental facility and all characteristic sizes, distances and materials: beamline BL01, synchrotron dipole magnetic filed, laser optical mirror used to insert the laser beam into the electron beamline, borosilicate vacuum window, copper gamma absorber installed into the electron beamline, gamma-beam shutter, primary and secondary gamma-beam collimators, and of course, flat efficiency neutron detector consisting from <sup>3</sup>He counters  embedded into the polyethylene moderator block. However, the experimental hall and the gamma-beam dump at the end of it, follows the ELI-NP E8 experimental hall design. This choice of experimental hall does not affect at all the simulation results in the case of <sup>3</sup>He counters 4Pi flat efficiency neutron detector. This have more influence in the case of fast-neutron detection array based on time of flight, due to the scattered neutrons on the experimental hall walls, and this justified the choice of sticking to the E8 geometry.
+
+![NewSUBARU layout](/images/NewSUBARU.png)
+  === NewSUBARU layout. ===
+  
+![4Pi Flat Efficiency neutron detector](/images/4Pi_Detector.png)
+  === 4Pi Flat Efficiency neutron detector ===
   
   Several geometry macro-commands are implemented in `eliLaBr_DetectorMessenger` class.
   
