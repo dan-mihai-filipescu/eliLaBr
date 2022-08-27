@@ -8,7 +8,14 @@ The Geant4 simulation package **eliLaBr** is intended to build executable and ru
 
 ## Prerequisites
 
-The package needs Geant4-9.6 version and ROOT-6.12 (or newer).
+The package needs Geant4-9.6 version and ROOT-5.34/ROOT-6.12 (or newer).
+
+In order to compile **`eliLaBr`** for ROOT-5.34, the user should un-comment
+```
+DEFINES =   -DOLD_ROOT
+```
+line in `GNUmakefile`.
+
 We are currently working to adapt the package source code in order to be able
 to compile also in Geant4-10 & Geant4-11. The `TSpectrum` ROOT class is also needed to be included and linked.
 
