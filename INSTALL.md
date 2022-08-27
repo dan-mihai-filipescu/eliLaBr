@@ -6,6 +6,8 @@ git clone --recurse-submodules https://github.com/dan-mihai-filipescu/eliLaBr.gi
 The Geant4 simulation package **eliLaBr** is intended to build executable and run it from 
 `~/geant4_workdir` directory.
 
+## Prerequisites
+
 The package needs Geant4-9.6 version and ROOT-6.12 (or newer).
 We are currently working to adapt the package source code in order to be able
 to compile also in Geant4-10 & Geant4-11. The `TSpectrum` ROOT class is also needed to be included and linked.
@@ -28,6 +30,8 @@ In this folder will be placed the libraries `libTvectors.so` and `libPileItUp.so
 that are build during the build process and will be needed in order to run the 
 package.
 
+## Make
+
 The code can be build by typing `make` in the main directory.
 This is relying on `GNUmakefile` script and will make also `libTvectors.so` and 
 `libPileItUp.so` libraries.
@@ -35,6 +39,8 @@ This is relying on `GNUmakefile` script and will make also `libTvectors.so` and
 - `make clean` will clean the last build of `eliLaBr` code
 - `make allclean` will clean the last build of `eliLaBr` code but also the 
 **`Tvectors`** and the **`PileItUp`** builds.
+
+## CMake
 
 The **eliLaBr** code can also be build locally using **CMake** based on `CMakeLists.txt` file.
 Go to `build` folder and read the instructions from `Readme.txt` file to build the executable and all needed libraries there.
