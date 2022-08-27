@@ -1,5 +1,5 @@
 # eliLaBr
-GEANT4 LCS simulation on flat efficincy neutron detector based on <sup>3</sup>He counters embedded into polyethylene moderator
+GEANT4 LCS simulation on flat efficiency neutron detector based on <sup>3</sup>He counters embedded into polyethylene moderator
 ===================================================================================================================
 
 ## Developers
@@ -8,7 +8,7 @@ Dan Mihai FILIPESCU[^1] <dan.filipescu@nipne.ro>
 
 Adriana Ioana GHEORGHE[^1] <ioana.gheorghe@nipne.ro>
 
-[^1]: [Horia Hulubei - National Institute for Phisics and Nuclear Engineering, Bucharest-Magurele, ROMANIA](https://www.nipne.ro)
+[^1]: [Horia Hulubei - National Institute for Physics and Nuclear Engineering, Bucharest-Magurele, ROMANIA](https://www.nipne.ro)
 
 ## Introduction
 
@@ -16,7 +16,7 @@ Adriana Ioana GHEORGHE[^1] <ioana.gheorghe@nipne.ro>
 
 The code simulate Compton interaction between laser and relativistic electron beams. Laser is modelled using Gaussian beams, while the electron beam is described using Twiss parameter formalism. This code was the main tool used in conceiving ELI-GANT TDR (**E**xtreme **L**ight **I**nfrastructure - **G**amma **A**bove **N**eutron **T**hreshold - **T**echnical **D**esign **R**eport). More details are given in [ApendixC1](https://raw.githubusercontent.com/dan-mihai-filipescu/eliLaBr/main/doc/ELI_TDR3-GANT_ApendixC1_V1.9.4_April_2015.pdf) of ELI-GANT TDR. One of the main classes of the code, **`eliLaBr_GammaSource`**, provides the required parameters to the **`PrimaryGenerator`** class of **GEANT4** framework. Radiation is further transported through collimators in order to produce quasi-monochromatic gamma-ray beam which is incident on a target. The reaction products are detected with radiation detectors. Information regarding involved **GEANT4** physics classes are given in [ApendixC3](https://raw.githubusercontent.com/dan-mihai-filipescu/eliLaBr/main/doc/ELI_TDR3-GANT_ApendixC3_V1.9.4_April_2015.pdf) of GANT TDR.
 
-This code was also the main tool used to design the flat efficiency neutron detector consisting from 31 <sup>3</sup>He counters (10 atm.) embeded into polyethylene moderator block. The present code was used in performing intensive simulations, testing many configurations, geometries, number of counters, reaching the most **Flat Efficiency** configuration which is currently used at the NewSUBARU Gamma-ray beam (gamma, xn) cross section measurements.
+This code was also the main tool used to design the flat efficiency neutron detector consisting from 31 <sup>3</sup>He counters (10 atm.) embedded into polyethylene moderator block. The present code was used in performing intensive simulations, testing many configurations, geometries, number of counters, reaching the most **Flat Efficiency** configuration which is currently used at the NewSUBARU Gamma-ray beam (gamma, xn) cross section measurements.
 
 The same code was used to make the second design of flat efficiency neutron detector for ELI-NP, namely **GANT-TN** instrument which consists from 28 <sup>3</sup>He counters (12 atm.) which is now under operation at ELI-NP. More simulated results of **GANT-TN** instrument can be found in [ApendixC4](https://raw.githubusercontent.com/dan-mihai-filipescu/eliLaBr/main/doc/ELI_TDR3-GANT_ApendixC4_V1.9.4_April_2015.pdf) and [ApendixD](https://raw.githubusercontent.com/dan-mihai-filipescu/eliLaBr/main/doc/ELI_TDR3-GANT_ApendixD_V1.9.4_April_2015.pdf) of GANT TDR.
 
@@ -49,25 +49,25 @@ In **interactive mode**, user should start with `control/execute commands`.
   ```
   /run/beamOn #(int)NumberOfEvents
   ```
-  - when we are interested to run **eliLaBr** in *interactive mode* we should do the other way arround:
+  - when we are interested to run **eliLaBr** in *interactive mode* we should do the other way around:
   ```
   /control/execute gui.mac
   /control/execute vis1.mac
   #/run/beamOn #(int)NumberOfEvents
   ```
   
-  **Important note**: the **eliLaBr** code generate the initial seeds of the Monte Carlo simulation based on the computer clock information colected when simulation starts, thus the simulation results cannot be identically reproduced, unless one input the same seeds at the begining of the simulation (the seeds are displayed on screen at the begining). This feature is important when using on multi-core computers - when launching **eliLaBr** multiple times using the same input, each process will run on a different core, and of course it will be launched at a slightly different time, thus the results of each process will be statistically different, allowing the user to add the simulation results of each simulation on different processor core into a single sum result.
+  **Important note**: the **eliLaBr** code generate the initial seeds of the Monte Carlo simulation based on the computer clock information collected when simulation starts, thus the simulation results cannot be identically reproduced, unless one input the same seeds at the beginning of the simulation (the seeds are displayed on screen at the beginning). This feature is important when using on multi-core computers - when launching **eliLaBr** multiple times using the same input, each process will run on a different core, and of course it will be launched at a slightly different time, thus the results of each process will be statistically different, allowing the user to add the simulation results of each simulation on different processor core into a single sum result.
   
   ## 1 - GEOMETRY DEFINITION
   
-  The general layout of the experimental setup follows the NewSUBARU experimental facility and all characteristic sizes, distances and materials: beamline BL01, synchrotron dipole magnetic filed, laser optical mirror used to insert the laser beam into the electron beamline, borosilicate vacuum window, copper gamma absorber installed into the electron beamline, gamma-beam shutter, primary and secondary gamma-beam collimators, and of course, flat efficiency neutron detector consisting from <sup>3</sup>He counters  embeded into the polyethylene moderator block. However, the experimental hall and the gamma-beam dump at the end of it, follows the ELI-NP E8 experimental hall design. This choice of experimental hall does not affect at all the simulation results in the case of <sup>3</sup>He counters 4Pi flat efficiency neutron detector. This have more influence in the case of fast-neutron detection array based on time of flight, due to the scattered neutrons on the experimental hall walls, and this justified the choice of sticking to the E8 geometry.
+  The general layout of the experimental setup follows the NewSUBARU experimental facility and all characteristic sizes, distances and materials: beamline BL01, synchrotron dipole magnetic filed, laser optical mirror used to insert the laser beam into the electron beamline, borosilicate vacuum window, copper gamma absorber installed into the electron beamline, gamma-beam shutter, primary and secondary gamma-beam collimators, and of course, flat efficiency neutron detector consisting from <sup>3</sup>He counters  embedded into the polyethylene moderator block. However, the experimental hall and the gamma-beam dump at the end of it, follows the ELI-NP E8 experimental hall design. This choice of experimental hall does not affect at all the simulation results in the case of <sup>3</sup>He counters 4Pi flat efficiency neutron detector. This have more influence in the case of fast-neutron detection array based on time of flight, due to the scattered neutrons on the experimental hall walls, and this justified the choice of sticking to the E8 geometry.
   
   Several geometry macro-commands are implemented in `eliLaBr_DetectorMessenger` class.
   
   A list with these macro-commands can be found in **`SetGeometry.mac`** macrofile which should be loaded into **`commands`** macrofile.
   
   **TARGET** is made *sensitive* and can be used as a detector. Three example cases are listed into **`SetGeometry.mac`**,and the corresponding block of macro-commands can be un-commented depending on the needs:
-  - *TARGET INSIDE 4Pi detector* - this is the normal case of a target placed in the middle of the neutron detector. Be carefull on the target dimensions not to exceed the inner diameter of the beamline pipe passing through the neutron detector central axis.
+  - *TARGET INSIDE 4Pi detector* - this is the normal case of a target placed in the middle of the neutron detector. Be careful on the target dimensions not to exceed the inner diameter of the beamline pipe passing through the neutron detector central axis.
   - *TARGET INSIDE E8 Hall* - this is intended to monitor the beam spectrum and usually used to simulate a beam monitor detector. Do not forget to un-comment *TARGET HOUSING* section macro-command `/eli/det/setTGHousing true` in case you intend to.
   - *MONITOR FOR GAMMA SOURCE* - this is intended to be an imaginary plate placed in front of the gamma-beam prior to collimation, in order to histogram different characteristics of the gamma-beam like spatial, energy and/or polarization distributions.
   
@@ -79,7 +79,7 @@ In **interactive mode**, user should start with `control/execute commands`.
   
   so please un-comment the corresponding block of macro-commands.
   
-  There are allowed a maximum number of **three** concentric rings of neutron counters around the central beampipe passing through the axis of the polyehylene moderator cube.
+  There are allowed a maximum number of **three** concentric rings of neutron counters around the central beampipe passing through the axis of the polyethylene moderator cube.
   
   ## 2 - PHYSICS LIST
   
@@ -103,7 +103,7 @@ In **interactive mode**, user should start with `control/execute commands`.
   - **`histos.mac`** - this file is recommended to be loaded in **`commands`** macrofile in the normal case when the gamma beam is collimated and sent on target (we can monitor the beam spot on target for example);
   - **`histor_monitor.mac`** - this file is recommended to be loaded in **`commands`** macrofile when we are interested to monitor the gamma-beam properties prior to collimation.
   
-  In the root directory of the project, the user can find some example ROOT macros (read2.cc, read2_sum.cc, read_BeamSpot.cc, read_BeamSpot_sum.cc, etc.), that can be further extended and adapted in order to read and analyse the 1D & 2D histograms incremended during single- OR multiple-core simulations.
+  In the root directory of the project, the user can find some example ROOT macros (read2.cc, read2_sum.cc, read_BeamSpot.cc, read_BeamSpot_sum.cc, etc.), that can be further extended and adapted in order to read and analyse the 1D & 2D histograms incremented during single- OR multiple-core simulations.
   
   ## 4 - THE PRIMARY GENERATOR
   
@@ -143,7 +143,7 @@ In **interactive mode**, user should start with `control/execute commands`.
   
   All these information collected from a *Step* residing in a *Sensitive Detector* is put together into a memory unit cell structure constituting the so-called *Hit*. Thus, for an *Event* we are putting together a *Collection (or Vector) of Hits* residing in the *Sensitive Detectors*.
   
-  The information from *Hits Collection* is further analyzed and processed in *End Of Event Action* method from the **`EventAction`** class. Thus the energy deposition in time is analysed for each neutron counter separately and and also for target. The **ROOT** class **`TSpectrum`** is used to identify separate peak energy deposited over time. These chained vectors of pairs (DepositedEnergy, Time) are stored in a **`TVectors`** class, specially written for this task. The information written in such vectors is possible to be analyzed later, considering different time integration constants, in a similar way as the *Shaping time* is acting in real electronics, in order to be able to treat energy deposits with enough distance in time between them as different events. For example, if in the same GEANT event, after a first neutron is detected in one counter, if a second neutron is detected by the same counter at an enough time distance from the first neutron (due to longer thermalization time), we can consider two different neutron detection events for the same counter.
+  The information from *Hits Collection* is further analyzed and processed in *End Of Event Action* method from the **`EventAction`** class. Thus the energy deposition in time is analyzed for each neutron counter separately and and also for target. The **ROOT** class **`TSpectrum`** is used to identify separate peak energy deposited over time. These chained vectors of pairs (DepositedEnergy, Time) are stored in a **`TVectors`** class, specially written for this task. The information written in such vectors is possible to be analyzed later, considering different time integration constants, in a similar way as the *Shaping time* is acting in real electronics, in order to be able to treat energy deposits with enough distance in time between them as different events. For example, if in the same GEANT event, after a first neutron is detected in one counter, if a second neutron is detected by the same counter at an enough time distance from the first neutron (due to longer thermalization time), we can consider two different neutron detection events for the same counter.
   
   In *End Of Event Action* method the energy deposited is integrated on each counter and in the target, the average time of energy deposited is computed (if we had EDep>0) for each counter and for target, and the multiplicity of detectors along with their index number is determined in order to put all these information into vectors.
   
@@ -153,29 +153,29 @@ In **interactive mode**, user should start with `control/execute commands`.
   
   ## Tvectors library
   
-  **`Tvectors`** dynamic library provides the classes dealing with storage of vectors of pairs (DepositedEnergy, Time) for each detector, the vector of which elements consists from previous vectors for all detectors involved in the current event and also the necessary methods to access the vector element pairs, insert/append/delete/initialize/sort/contract elements, etc. The class is needed while performing the GEANT simulation, but also in the process of sorting/analysing the simulation results.
+  **`Tvectors`** dynamic library provides the classes dealing with storage of vectors of pairs (DepositedEnergy, Time) for each detector, the vector of which elements consists from previous vectors for all detectors involved in the current event and also the necessary methods to access the vector element pairs, insert/append/delete/initialize/sort/contract elements, etc. The class is needed while performing the GEANT simulation, but also in the process of sorting/analyzing the simulation results.
   
   ## DataAnalysis package files
   
   This folder contains **`PileItUp`** code which is used to perform the sorting of events saved in the **`nai_9_MeV.root`** event file produced by the **eliLaBr** GEANT4 simulation code. The code relies on **`PileItUp.in`** input file which contains self-explanatory information.
   
-  One important option specifify how many consecutive events should be packed together in order to simulate the pile-up effect on the detector due to the multiple particle within one bunch. Thus, with one unique simulation performed, we can make multiple data analysis considering different scenarios: no pile-up, or pile-up considering different distributions, averages, etc. We can consider a fixed integer number of pile-up events, or a Poisson distribution of events, providing the average value of the Poisson distribution. **`Tvectors`** class is used in the pile-up process, appending (DepositedEnergy, Time) pair elements to the vectors of each detector, then sorting the elements and contracting them according to a *Shaping Time* packing provided at input in order to simulate the experimental effect of a shaper.
+  One important option specify how many consecutive events should be packed together in order to simulate the pile-up effect on the detector due to the multiple particle within one bunch. Thus, with one unique simulation performed, we can make multiple data analysis considering different scenarios: no pile-up, or pile-up considering different distributions, averages, etc. We can consider a fixed integer number of pile-up events, or a Poisson distribution of events, providing the average value of the Poisson distribution. **`Tvectors`** class is used in the pile-up process, appending (DepositedEnergy, Time) pair elements to the vectors of each detector, then sorting the elements and contracting them according to a *Shaping Time* packing provided at input in order to simulate the experimental effect of a shaper.
   
-  The user can request analysis code to make output Energy/Time spectra files for individual <sup>3</sup>He counters AND/OR for 4Pi n-detector concentric rings AND totals if ANY/OR CERTAIN particle (neutron, gamma, proton, e+, e-, deuteron, alpha, ,<sup>12</sup>C, etc.) **deposited energy** OR **only crossed the counter border**. All these options better help understanding how different precesses are taking place and unveil the details of the interaction.
+  The user can request analysis code to make output Energy/Time spectra files for individual <sup>3</sup>He counters AND/OR for 4Pi n-detector concentric rings AND totals if ANY/OR CERTAIN particle (neutron, gamma, proton, e+, e-, deuteron, alpha, ,<sup>12</sup>C, etc.) **deposited energy** OR **only crossed the counter border**. All these options better help understanding how different processes are taking place and unveil the details of the interaction.
   
   The most important task performed by the **`PileItUp`** code is the conversion of the simulated results into **GASP** list data format, which is the current list data format adopted for the acquired experimental data in the experiments performed at **RoSPHERE** array from 9MV Tandem, IFIN-HH, Romania and **GASP** array from INFN Legnaro, Italy laboratories. In this way, the user will be able to apply the same data analysis procedure to the simulated results as it would do for data acquired in a real experiment, using **GASPWare** data analysis package.
   
   In fact, **`PileItUp`** code converts the simulated list data results in two **GASP** files, using two configurations:
-  1. In the first configuration it is considered that we have only one type of detector, namely the <sup>3</sup>He counter type, while the total number of such detectors is basically the total number of physicsl detectors (31 in the case of NewSUBARU flat efficiency detector). For each detector two parameters are stored (Energy and Time), at each event (piling-up or not) per target. Only one (the **First** one) Energy & Time per event and per detector are allowed. This is the common event list data adopted at **RoSPHERE** and **GASP** arrays. For this case, the user can check the demo GASP setup file **`Proje.setup`**.
+  1. In the first configuration it is considered that we have only one type of detector, namely the <sup>3</sup>He counter type, while the total number of such detectors is basically the total number of physical detectors (31 in the case of NewSUBARU flat efficiency detector). For each detector two parameters are stored (Energy and Time), at each event (piling-up or not) per target. Only one (the **First** one) Energy & Time per event and per detector are allowed. This is the common event list data adopted at **RoSPHERE** and **GASP** arrays. For this case, the user can check the demo GASP setup file **`Proje.setup`**.
   2. In the second configuration it is considered that we have four types of detectors:
      - inner ring type of detectors (A);
      - middle ring type of detectors (B);
      - outer ring type of detectors (C);
      - all detectors (disregarding the ring);
 
-  For each type of detector, the total number of detectors correspond to the total number of neutron hits per that type, considering that the vectors with (Energy, Time) pair hits corresponding to that detector was previously sorted according to time increase and contracted according to *Shaping Time*. In this second scenario, an event correspond to an entire time interval between two beam bunches, needed to allow thermalization and detection of all neutrons emited in the reaction. This second configuration is the usual one used in the photo-neutron (g,xn) cross section measurements performed at the NewSUBARU gamma-beam facility and at the (particle, xn) cross section measurements performed ar Tandem accelerators from IFIN-HH. For this case, the user can use the demo GASP setup file **`Proje_indv.setup`**.
+  For each type of detector, the total number of detectors correspond to the total number of neutron hits per that type, considering that the vectors with (Energy, Time) pair hits corresponding to that detector was previously sorted according to time increase and contracted according to *Shaping Time*. In this second scenario, an event correspond to an entire time interval between two beam bunches, needed to allow thermalization and detection of all neutrons emitted in the reaction. This second configuration is the usual one used in the photo-neutron (g,xn) cross section measurements performed at the NewSUBARU gamma-beam facility and at the (particle, xn) cross section measurements performed ar Tandem accelerators from IFIN-HH. For this case, the user can use the demo GASP setup file **`Proje_indv.setup`**.
   
-  User should provide to **`PileItUp`** code also the file **`files`** which contains the the total number of events that the user want to analyse and the names of the ROOT event files that have to be analysed (this is useful if many such event files were produced in multiple-core simulations).
+  User should provide to **`PileItUp`** code also the file **`files`** which contains the the total number of events that the user want to analyze and the names of the ROOT event files that have to be analyzed (this is useful if many such event files were produced in multiple-core simulations).
   
   ## Papers
   
