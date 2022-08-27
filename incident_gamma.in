@@ -62,6 +62,8 @@
     betay0 = sigy0 * sigy0 / emmity;
     in >> laser_theta0;     laser_theta0 = laser_theta0 * deg;
     in >> laser_phi0_ini;    //laser_phi0 = laser_phi0 * deg;
+                            if(laser_phi0_ini < 0.) laser is equi-distant azimuthal rotated 32 times around electron axis (EuroGammaS style)
+			    if(LaserType==4 AND laser_phi0_ini < -1.) LaserPolVector Tau is wiggled according to EuroGammaS recirculator article
     in >> taui;              taui = taui * deg;
     in >> Plin;
     in >> Pcirc;
