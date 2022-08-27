@@ -140,6 +140,8 @@ private:
      G4double F0, F0p, F1, F11, F22, F33, Fnum;         //Aditional Variables needed to compute Stokes parameters
 
      G4double dispXer, dispYer;
+     G4int iTau;
+     G4double TauShift[32];//= {0.,0.1,0.18,0.22,0.24,0.22,0.18,0.1,0.,-0.1,-0.18,-0.22,-0.24,-0.22,-0.18,-0.1,0.,0.1,0.18,0.22,0.24,0.22,0.18,0.1,0.,-0.1,-0.18,-0.22,-0.24,-0.22,-0.18,-0.1};
 };
 
 
