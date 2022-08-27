@@ -1,3 +1,8 @@
+**Download** the **eliLaBr** code from **GitHub**:
+```
+git clone --recurse-submodules https://github.com/dan-mihai-filipescu/eliLaBr.git eliLaBr
+```
+
 The Geant4 simulation package **eliLaBr** is intended to build executable and run it from 
 `~/geant4_workdir` directory.
 
