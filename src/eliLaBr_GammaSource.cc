@@ -12,6 +12,23 @@ eliLaBr_Counter electron_counter, cycleZ_counter, cycleXY_counter;
 
 eliLaBr_GammaSource::eliLaBr_GammaSource(eliLaBr_DetectorConstruction* Det):Detector(Det) {
 
+    //TauShift = {0.,0.1,0.18,0.22,0.24,0.22,0.18,0.1,0.,-0.1,-0.18,-0.22,-0.24,-0.22,-0.18,-0.1,0.,0.1,0.18,0.22,0.24,0.22,0.18,0.1,0.,-0.1,-0.18,-0.22,-0.24,-0.22,-0.18,-0.1};
+    G4double TauShift_val1, TauShift_val2, TauShift_val3, TauShift_valM;
+    
+    TauShift_val1 = 0.1;  //1.0;
+    TauShift_val2 = 0.18; //1.8;
+    TauShift_val3 = 0.22; //2.2;
+    TauShift_valM = 0.24; //2.4;
+    
+    TauShift[0] = TauShift[8] = TauShift[16] = TauShift[24] = 0.;
+    TauShift[1] = TauShift[7] = TauShift[17] = TauShift[23] = TauShift_val1;
+    TauShift[9] = TauShift[15] = TauShift[25] = TauShift[31] = -TauShift_val1;
+    TauShift[2] = TauShift[6] = TauShift[18] = TauShift[22] = TauShift_val2;
+    TauShift[10] = TauShift[14] = TauShift[26] = TauShift[30] = -TauShift_val2;
+    TauShift[3] = TauShift[5] = TauShift[19] = TauShift[21] = TauShift_val3;
+    TauShift[11] = TauShift[13] = TauShift[27] = TauShift[29] = -TauShift_val3;
+    TauShift[4] = TauShift[20] = TauShift_valM;
+    TauShift[12] = TauShift[28] = -TauShift_valM;
 
     Z_pas = 10.*mm;
     Z_min = -10100.*mm;
@@ -97,8 +114,9 @@ eliLaBr_GammaSource::eliLaBr_GammaSource(eliLaBr_DetectorConstruction* Det):Dete
       defaultLaserDiameter = 0.050;//mm.
       defaultSquareQF = 1.2;       // NO Dim!
       defaultFocus = 0.;           //mm.
-      WaveLength = 532.;           //nm.
-      //WaveLength = 0.05;
+      //WaveLength = 532.;           //nm.
+      WaveLength = 515.;
+      //WaveLength = 0.01;
       }
 
     // Laser diameter at beam waist (from specifications)
@@ -499,7 +517,17 @@ void eliLaBr_GammaSource::NextGamma() {
     G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
 
 /*___________________Generate Laser rotation angle inside recirculator___*/
-    if (laser_phi0_ini < 0.) laser_phi0 = floor(32.*G4UniformRand())*(360./32.)*deg;
+    taurot = 0;
+    if (laser_phi0_ini < 0.)
+      {
+      iTau = floor(32.*G4UniformRand());
+      laser_phi0 = iTau*(360./32.)*deg;
+      if(LaserType==4)
+        {
+        if(laser_phi0_ini<(-1.)) taurot = TauShift[iTau]*deg;
+          else taurot = 0.;
+        }
+      }
       else laser_phi0 = laser_phi0_ini*deg;
 
 /*___________________Generate Interaction Point__________________________*/
@@ -701,7 +729,7 @@ void eliLaBr_GammaSource::NextGamma() {
       }
     else
       {
-    taurot = 0;
+    //taurot = 0;
     if(PLIN_MODEL_SW==1)
       {
       if (G4UniformRand()<Plin) taurot = 0.;
@@ -717,7 +745,7 @@ void eliLaBr_GammaSource::NextGamma() {
 //Generate photon direction and polarization Lorentz vector
     ey.set(0.,1.,0.);
     ey.rotateZ(taurot+taui);
-    taurot = taui;
+    //taurot = taui;
     if(!IDEAL_LASER_SW)
         {
         laser_dir0.set(0.,0.,1.);
@@ -770,6 +798,7 @@ void eliLaBr_GammaSource::NextGamma() {
 //    pol0.rotateZ(laser_phi);
     pol0.set(((phimp0.getV()).cross(ey)).unit(),0.);
     analysisManager->FillH1(9,(pol0.getV()).getPhi());
+    //analysisManager->FillH2(23, (pol0.getV()).getTheta(), (pol0.getV()).getPhi(),LCSweight);
 
 /*    taurot = 0;
     if(PLIN_MODEL_SW==1)
@@ -828,6 +857,7 @@ void eliLaBr_GammaSource::NextGamma() {
     //analysisManager->FillH1(5,angle0);
 /*___________Register this direction of incident photon______________________________________________________________________*/
     phot_dir0.set(phimp0.getX(),phimp0.getY(),phimp0.getZ());
+//    G4cout<<"Eph_Erest = "<<phimp0.getT()/eV<<" eV;" <<G4endl;
 
 /*___________Gauge transformation of polarization vector_____________________________________________________________________*/
     fgauge = pol0.getT() / phimp0.getT();
@@ -1019,6 +1049,7 @@ SetNewPolarization(VectorModel, epsilon, Plin, thrnd, Phi_ang_v, &pBeta);
     Lepsilon1 = Lepsilon1 - fgauge*phimp1;
     fgauge = Lepsilon2.getT() / phimp1.getT();
     Lepsilon2 = Lepsilon2 - fgauge*phimp1;
+    //analysisManager->FillH2(23, gammaPolarization1.getPhi(), gammaPolarization1.getTheta(), LCSweight);
     
     ez = phimp1.getV().unit();
     eZ.set(0.,0.,1.);
