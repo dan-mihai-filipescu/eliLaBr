@@ -540,7 +540,7 @@ TGhousing_log->SetVisAttributes(G4Colour(1.,1.,1.));
 
 //=====================LASER_Mirror & Borosilicate_window========================
 // ___________________________LASER_Mirror_______________________________________
-G4Tubs* LASER_Mirror_tub = new G4Tubs("LASER_Mirror_tub", 0.*mm , 4.*cm , 1.*mm, 0.0, 360*degree);
+G4Tubs* LASER_Mirror_tub = new G4Tubs("LASER_Mirror_tub", 0.*mm , 38.*mm , 2.*mm, 0.0, 360*degree);
 G4LogicalVolume* LASER_Mirror_log = new G4LogicalVolume ( LASER_Mirror_tub, Silicon, "LASER_Mirror_log");
 G4RotationMatrix* LASER_Mirror_rot = new G4RotationMatrix();
 LASER_Mirror_rot-> rotateY(-45.*deg);
@@ -551,7 +551,7 @@ new G4PVPlacement ( LASER_Mirror_rot, G4ThreeVector(.0*cm, .0*cm, (1547.+5.-20.-
 }
 
 // ___________________________Borosilicate_window________________________________
-G4Tubs* Borosilicate_window_tub = new G4Tubs("Borosilicate_window_tub", 0.*mm , 4.*cm , 2.25*mm, 0.0, 360*degree);
+G4Tubs* Borosilicate_window_tub = new G4Tubs("Borosilicate_window_tub", 0.*mm , 3.1*cm , 2.25*mm, 0.0, 360*degree);
 G4LogicalVolume* Borosilicate_window_log = new G4LogicalVolume ( Borosilicate_window_tub, Borosilicate_glass, "Borosilicate_window_log");
 if(Place_window) {
 //G4VPhysicalVolume* Borosilicate_window = 
@@ -783,6 +783,21 @@ ElectronBeamlinePipe_log->SetVisAttributes(G4Colour(0.5,0.5,0.5));
 //G4VPhysicalVolume* ElectronBeamlinePipe = 
 new G4PVPlacement ( 0, G4ThreeVector(0.*cm, 0.*cm, 0.*cm + GammaSourcePos),
                           ElectronBeamlinePipe_log, "ElectronBeamlinePipe", experimentalHall_log, false, 0);
+
+G4Tubs* ElectronBeamlinePipe_aftertub = new G4Tubs("ElectronBeamlinePipe_aftertub", 5.01*cm, 5.16*cm, 193.*cm, 0.*degree, 360.*degree);
+G4LogicalVolume* ElectronBeamlinePipe_afterlog = new G4LogicalVolume ( ElectronBeamlinePipe_aftertub, Fe_Cr_Ni, "ElectronBeamlinePipe_afterlog");
+ElectronBeamlinePipe_afterlog->SetVisAttributes(G4Colour(0.5,0.5,0.0));
+//G4VPhysicalVolume* ElectronBeamlinePipe =
+new G4PVPlacement ( 0, G4ThreeVector(0.*cm, 0.*cm, 0.*cm + GammaSourcePos +1342.*cm),
+                          ElectronBeamlinePipe_afterlog, "ElectronBeamlinePipeafter", experimentalHall_log, false, 0);
+
+G4Tubs* ElectronBeamlineFlange_tub = new G4Tubs("ElectronBeamlineFlange_tub", 3.0*cm, 5.16*cm, 1.*cm, 0.*degree, 360.*degree);
+G4LogicalVolume* ElectronBeamlineFlange_log = new G4LogicalVolume ( ElectronBeamlineFlange_tub, Fe_Cr_Ni, "ElectronBeamlineFlange_log");
+ElectronBeamlineFlange_log->SetVisAttributes(G4Colour(0.5,0.5,0.5));
+//G4VPhysicalVolume* ElectronBeamlinePipe =
+new G4PVPlacement ( 0, G4ThreeVector(0.*cm, 0.*cm, 0.*cm + GammaSourcePos +(1342.+193.+1.1)*cm),
+                          ElectronBeamlineFlange_log, "ElectronBeamlineFlange", experimentalHall_log, false, 0);
+
 //================================= END OF Electron beamline ==============================================================
 
 //============================== ELI GEOMETRY =============================================================================
