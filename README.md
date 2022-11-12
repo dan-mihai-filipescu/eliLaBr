@@ -2,6 +2,9 @@
 GEANT4 LCS simulation on flat efficiency neutron detector based on <sup>3</sup>He counters embedded into polyethylene moderator
 ===================================================================================================================
 
+[![DOI](https://zenodo.org/badge/520783465.svg)](https://zenodo.org/badge/latestdoi/520783465)
+(DOI for the latest release of the `code`)
+
 ## Developers
 
 Dan Mihai FILIPESCU[^1] <dan.filipescu@nipne.ro>
