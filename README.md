@@ -10,6 +10,26 @@ Adriana Ioana GHEORGHE[^1] <ioana.gheorghe@nipne.ro>
 
 [^1]: [Horia Hulubei - National Institute for Physics and Nuclear Engineering, Bucharest-Magurele, ROMANIA](https://www.nipne.ro)
 
+## How to cite
+
+The code is described in the following articles: [JINST](https://doi.org/10.1088/1748-0221/17/11/P11006) & [arXiv](https://doi.org/10.48550/arXiv.2210.14669)
+```
+@article{Filipescu_2022,
+doi = {10.1088/1748-0221/17/11/P11006},
+url = {https://dx.doi.org/10.1088/1748-0221/17/11/P11006},
+year = {2022},
+month = {nov},
+publisher = {IOP Publishing},
+volume = {17},
+number = {11},
+pages = {P11006},
+author = {Dan Filipescu},
+title = {Monte Carlo simulation method of polarization effects in Laser Compton Scattering on relativistic electrons},
+journal = {Journal of Instrumentation},
+abstract = {Quasi-monochromatic, high energy and highly polarized γ-ray beam sources based on Compton scattering of laser photons (LCS) on relativistic electrons have developed for the last few decades as established instruments for nuclear physics studies. Following an extensive photoneutron experimental campaign at the LCS γ-ray beam line of the NewSUBARU synchrotron radiation facility at SPring8, Japan, a dedicated simulation code was developed for characterizing the incident γ-ray beams. The eliLaBr code is implemented using Geant4 and is available on the GitHub repository (github.com/dan-mihai-filipescu/eliLaBr). The present work describes step-by-step the Monte Carlo algorithm with focus on modeling the polarization properties of the scattered photon. The polarization is treated independently both in the Stokes parameters and in the polarization vector formalisms. An intervalidation between the two methods is given. Based on polarization state description requirements of different Geant4 physics classes, user recommendations are given on which of the two methods to be employed. The spatial and energy distributions for the LCS γ-ray beam and its Stokes parameters are obtained for head-on laser — relativistic electron collisions, where several incident laser polarization states were considered: linear, unpolarized, circular  and mixed linear and circular polarization. Results of previous investigations on the polarization of Compton scattered photons are reproduced. The influence of variable incident angle between photon and electron beam was also investigated. We show that the degree of polarization transfer from the incident photon to the scattered photon increases with the collision angle, where head-on is considered 0°. However, as the polarization transfer is strongly influenced by the incident photon energy, we show that, for γ-ray sources based on Compton scattering of laser photons on relativistic electrons, the polarization degree of the incident photon is almost completely transferred to the scattered photon for any incident angle.}
+}
+```
+
 ## Introduction
 
 **eliLaBr** was created starting with 2013 during first photoneutron cross section measurements performed at [Laser Compton Scattering (LCS) Gamma-ray beam](https://www.lasti.u-hyogo.ac.jp/NS-en/facility/bl01/), beamline BL01/GACKO Hutch from [NewSUBARU](http://www.spring8.or.jp/en/about_us/whats_sp8/facilities/accelerators/new_subaru/) synchrotron, SPring8, JAPAN.
