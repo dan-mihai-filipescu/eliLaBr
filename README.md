@@ -15,7 +15,7 @@ Adriana Ioana GHEORGHE[^1] <ioana.gheorghe@nipne.ro>
 
 ## How to cite
 
-The code is described in the following articles: [JINST](https://doi.org/10.1088/1748-0221/17/11/P11006) & [arXiv](https://doi.org/10.48550/arXiv.2210.14669)
+The code is described in the following articles: [JINST](https://doi.org/10.1088/1748-0221/17/11/P11006) ([arXiv](https://doi.org/10.48550/arXiv.2210.14669)) & [NIM](https://doi.org/10.1016/j.nima.2022.167885) ([arXiv](https://doi.org/10.48550/arXiv.2211.14650))
 ```
 @article{Filipescu_2022,
 doi = {10.1088/1748-0221/17/11/P11006},
@@ -30,6 +30,22 @@ author = {Dan Filipescu},
 title = {Monte Carlo simulation method of polarization effects in Laser Compton Scattering on relativistic electrons},
 journal = {Journal of Instrumentation},
 abstract = {Quasi-monochromatic, high energy and highly polarized γ-ray beam sources based on Compton scattering of laser photons (LCS) on relativistic electrons have developed for the last few decades as established instruments for nuclear physics studies. Following an extensive photoneutron experimental campaign at the LCS γ-ray beam line of the NewSUBARU synchrotron radiation facility at SPring8, Japan, a dedicated simulation code was developed for characterizing the incident γ-ray beams. The eliLaBr code is implemented using Geant4 and is available on the GitHub repository (github.com/dan-mihai-filipescu/eliLaBr). The present work describes step-by-step the Monte Carlo algorithm with focus on modeling the polarization properties of the scattered photon. The polarization is treated independently both in the Stokes parameters and in the polarization vector formalisms. An intervalidation between the two methods is given. Based on polarization state description requirements of different Geant4 physics classes, user recommendations are given on which of the two methods to be employed. The spatial and energy distributions for the LCS γ-ray beam and its Stokes parameters are obtained for head-on laser — relativistic electron collisions, where several incident laser polarization states were considered: linear, unpolarized, circular  and mixed linear and circular polarization. Results of previous investigations on the polarization of Compton scattered photons are reproduced. The influence of variable incident angle between photon and electron beam was also investigated. We show that the degree of polarization transfer from the incident photon to the scattered photon increases with the collision angle, where head-on is considered 0°. However, as the polarization transfer is strongly influenced by the incident photon energy, we show that, for γ-ray sources based on Compton scattering of laser photons on relativistic electrons, the polarization degree of the incident photon is almost completely transferred to the scattered photon for any incident angle.}
+}
+```
+
+```
+@article{FILIPESCU2023167885,
+title = {Spectral distribution and flux of Î³-ray beams produced through Compton scattering of unsynchronized laser and electron beams},
+journal = {Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment},
+volume = {1047},
+pages = {167885},
+year = {2023},
+issn = {0168-9002},
+doi = {https://doi.org/10.1016/j.nima.2022.167885},
+url = {https://www.sciencedirect.com/science/article/pii/S0168900222011779},
+author = {Dan Filipescu and Ioana Gheorghe and Konstantin Stopani and Sergey Belyshev and Satoshi Hashimoto and Shuji Miyamoto and Hiroaki Utsunomiya},
+keywords = {Laser Compton scattering, Gamma ray source, Monte Carlo simulation, Photoneutron reactions, Electron synchrotron, LaBr:Ce detector},
+abstract = {Intense, quasi-monochromatic, polarized Î³-ray beams with high and tunable energy produced by Compton scattering of laser photons against relativistic electrons are used for fundamental studies and applications. Following a series of photoneutron cross section measurements in the Giant Dipole Resonance (GDR) energy region performed at the NewSUBARU synchrotron radiation facility, we have developed the eliLaBr Monte Carlo simulation code for characterization of the scattered Î³-ray photon beams. The code is implemented using Geant4 and is available on the GitHub repository (https://github.com/dan-mihai-filipescu/eliLaBr). Here we report the validation of the eliLaBr code on NewSUBARU LCS Î³-ray beam flux and spectral distribution data and two applications performed with it for asymmetric transverse emittance profiles electron beams, characteristic for synchrotrons. The first application is based on a systematic investigation of transverse collimator offsets relative to the laser and electron beam axis. We show that the maximum energy of the LCS Î³-ray beam is altered by vertical collimator offsets, where the edge shifts towards lower energies with the increase in the offset. Secondly, using the eliLaBr code, we investigate the effect of the laser polarization plane orientation on the properties of the LCS Î³-ray beams produced with asymmetric emittance electron beams. We show that: 1. The use of vertically polarized lasers contributes to the preservation of the LCS Î³-ray beam maximum energy edge by increasing the precision in the vertical collimator alignment. 2. Under identical conditions for the electron and laser beams phase-space distributions, the energy spectrum of the scattered LCS Î³-ray beam changes with the laser beam polarization plane orientation. More precisely, the use of vertically polarized laser beams slightly deteriorates the LCS Î³-ray beam energy resolution.}
 }
 ```
 
