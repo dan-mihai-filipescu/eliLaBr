@@ -209,6 +209,8 @@ In **interactive mode**, user should start with `control/execute commands`.
   ## Papers
   
   Several papers made use of **eliLaBr** code over the time:
+  - D. Filipescu et al. *"Spectral distribution and flux of g-ray beams produced through Compton scattering of unsynchronized laser and electron beams"*, NIMA **1047** 167885 (2023) [10.1016/j.nima.2022.167885](https://doi.org/10.1016/j.nima.2022.167885) (arXiv: [arXiv:2211.14650]( 	
+https://doi.org/10.48550/arXiv.2211.14650))
   - D. Filipescu *"Monte Carlo simulation method of polarization effects in Laser Compton Scattering on relativistic electrons"*, JINST **17** P11006 (2022) [10.1088/1748-0221/17/11/P11006](https://doi.org/10.1088/1748-0221/17/11/P11006) (arXiv: [arXiv:2210.14669](https://doi.org/10.48550/arXiv.2210.14669))
   - I. Gheorghe et al. *"Updated neutron-multiplicity sorting method for producing photoneutron average energies and resolving multiple firing events"*, NIMA **1019** 165867 (2021) [10.1016/j.nima.2021.165867](https://doi.org/10.1016/j.nima.2021.165867)
   - S. Belyshev et al. *"New Bi-209 photodisintegration data and physical criteria of data reliability"*, EPJ Web of Conf. **239** 01031 (2020) [10.1051/epjconf/202023901031](https://doi.org/10.1051/epjconf/202023901031)
